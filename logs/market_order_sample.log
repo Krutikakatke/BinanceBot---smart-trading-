@@ -1,0 +1,6 @@
+2024-05-24 14:20:01 | INFO     | cli | BinanceClient initialised — endpoint: https://testnet.binancefuture.com
+2024-05-24 14:20:02 | INFO     | cli | Connected to Binance Futures Testnet
+2024-05-24 14:20:02 | INFO     | orders | Placing MARKET BUY BTCUSDT | qty=0.42 price=None
+2024-05-24 14:20:02 | DEBUG    | client | POST https://testnet.binancefuture.com/fapi/v1/order | params={'symbol': 'BTCUSDT', 'side': 'BUY', 'type': 'MARKET', 'quantity': 0.42, 'timestamp': 1716557202345}
+2024-05-24 14:20:02 | DEBUG    | client | Response 200: {"orderId":842911023,"symbol":"BTCUSDT","status":"FILLED","clientOrderId":"web_abc123","price":"0","avgPrice":"64231.50","origQty":"0.420","executedQty":"0.420","cumQty":"0.420","cumQuote":"26977.23","timeInForce":"GTC","type":"MARKET","side":"BUY","stopPrice":"0","workingType":"CONTRACT_PRICE","priceProtect":false,"origType":"MARKET","updateTime":1716557202789}
+2024-05-24 14:20:02 | INFO     | orders | Order placed — orderId=842911023 status=FILLED

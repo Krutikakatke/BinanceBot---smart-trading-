@@ -1,0 +1,7 @@
+2024-05-24 13:00:00 | INFO     | cli | BinanceClient initialised — endpoint: https://testnet.binancefuture.com
+2024-05-24 13:00:01 | INFO     | cli | Connected to Binance Futures Testnet
+2024-05-24 13:00:01 | INFO     | orders | Placing LIMIT SELL ETHUSDT | qty=15.0 price=3492.12
+2024-05-24 13:00:01 | DEBUG    | client | POST https://testnet.binancefuture.com/fapi/v1/order | params={'symbol': 'ETHUSDT', 'side': 'SELL', 'type': 'LIMIT', 'quantity': 15.0, 'price': 3492.12, 'timeInForce': 'GTC', 'timestamp': 1716552001123}
+2024-05-24 13:00:02 | DEBUG    | client | Response 200: {"orderId":842900982,"symbol":"ETHUSDT","status":"NEW","clientOrderId":"web_eth_002","price":"3492.12","avgPrice":"0","origQty":"15.000","executedQty":"0","cumQty":"0","cumQuote":"0","timeInForce":"GTC","type":"LIMIT","side":"SELL","stopPrice":"0","workingType":"CONTRACT_PRICE","priceProtect":false,"origType":"LIMIT","updateTime":1716552002456}
+2024-05-24 13:05:44 | INFO     | orders | Order placed — orderId=842900982 status=NEW
+2024-05-24 13:05:44 | INFO     | orders | Order 842900982 CANCELED by user

@@ -1,0 +1,696 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Binance Futures Testnet Bot</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --bg:#0d0f14;--surface:#13161d;--card:#1a1e28;--border:#2a2f3d;
+  --green:#00d084;--green-dim:#00a066;--red:#ff4d6d;--red-dim:#cc3355;
+  --yellow:#f0c040;--blue:#4da6ff;--muted:#6b7280;--text:#e8eaf0;--text2:#9ca3af;
+  --font:'JetBrains Mono',monospace;--head:'Space Grotesk',sans-serif;
+}
+body{background:var(--bg);color:var(--text);font-family:var(--font);font-size:13px;min-height:100vh;overflow-x:hidden}
+.terminal-grid{display:grid;grid-template-columns:1fr 330px;grid-template-rows:52px 1fr 110px;min-height:100vh}
+.topbar{grid-column:1/-1;background:var(--surface);border-bottom:1px solid var(--border);display:flex;align-items:center;justify-content:space-between;padding:0 20px}
+.logo{font-family:var(--head);font-weight:700;font-size:15px;color:var(--yellow)}
+.logo span{color:var(--green)}
+.badge{background:#1f2a1f;border:1px solid var(--green-dim);color:var(--green);font-size:10px;padding:2px 8px;border-radius:3px;letter-spacing:1px}
+.topbar-left{display:flex;align-items:center;gap:14px}
+.ticker-wrap{display:flex;gap:20px}
+.ticker{display:flex;flex-direction:column}
+.ticker-sym{font-size:10px;color:var(--muted);letter-spacing:.5px}
+.ticker-price{font-size:13px;font-weight:600}
+.ticker-chg{font-size:10px}
+.up{color:var(--green)}.dn{color:var(--red)}
+.topbar-right{display:flex;align-items:center;gap:12px}
+.acct-bal{font-size:12px;color:var(--text2)}
+.acct-val{color:var(--yellow);font-weight:600}
+.conn-dot{width:7px;height:7px;border-radius:50%;background:var(--muted)}
+.conn-dot.live{background:var(--green);box-shadow:0 0 6px var(--green);animation:pulse 2s infinite}
+.conn-dot.err{background:var(--red)}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.4}}
+
+.main-panel{padding:16px;overflow-y:auto;display:flex;flex-direction:column;gap:14px}
+.side-panel{background:var(--surface);border-left:1px solid var(--border);display:flex;flex-direction:column;overflow:hidden}
+.footer{grid-column:1/-1;background:var(--surface);border-top:1px solid var(--border);padding:10px 20px;overflow:hidden}
+
+.card{background:var(--card);border:1px solid var(--border);border-radius:6px;padding:14px}
+.sec-head{font-size:10px;color:var(--muted);letter-spacing:1px;text-transform:uppercase;margin-bottom:10px;padding-bottom:6px;border-bottom:1px solid var(--border)}
+
+/* Chart */
+.chart-header{display:flex;justify-content:space-between;align-items:flex-start;margin-bottom:10px}
+.chart-sym{font-family:var(--head);font-weight:700;font-size:16px}
+.chart-price{font-family:var(--head);font-size:20px;font-weight:700;color:var(--green)}
+.chart-sub{font-size:11px;color:var(--text2);margin-top:2px}
+.tf-row{display:flex;gap:4px;margin-bottom:8px}
+.tf{padding:3px 9px;border-radius:3px;border:1px solid var(--border);background:transparent;color:var(--muted);font-size:11px;cursor:pointer;font-family:var(--font)}
+.tf.active{background:var(--blue);border-color:var(--blue);color:#fff}
+canvas{width:100%;display:block}
+
+/* Positions */
+.pos-table{width:100%;border-collapse:collapse;font-size:11px}
+.pos-table th{color:var(--muted);font-size:10px;text-align:left;padding:4px 6px;border-bottom:1px solid var(--border)}
+.pos-table td{padding:7px 6px;border-bottom:1px solid #1a1e28}
+.pos-table tr:last-child td{border-bottom:none}
+.tag{padding:2px 6px;border-radius:2px;font-size:10px;font-weight:600;letter-spacing:.5px}
+.tag.long{background:#0a2e1a;color:var(--green);border:1px solid #0f4a28}
+.tag.short{background:#2e0a14;color:var(--red);border:1px solid #4a0f20}
+.pnl-pos{color:var(--green)}.pnl-neg{color:var(--red)}
+
+/* Order form */
+.order-form{padding:14px;overflow-y:auto;flex:1}
+.form-sym{font-family:var(--head);font-weight:700;font-size:14px;margin-bottom:12px;display:flex;justify-content:space-between;align-items:center}
+.perp-tag{font-size:10px;color:var(--muted);border:1px solid var(--border);padding:2px 7px;border-radius:3px}
+.buy-sell{display:grid;grid-template-columns:1fr 1fr;border-radius:4px;overflow:hidden;border:1px solid var(--border);margin-bottom:13px}
+.bs{padding:9px;text-align:center;font-family:var(--head);font-weight:600;font-size:12px;cursor:pointer;border:none;background:transparent;color:var(--muted);transition:.15s}
+.bs.buy.on{background:#0a3320;color:var(--green);border-bottom:2px solid var(--green)}
+.bs.sell.on{background:#2e0a14;color:var(--red);border-bottom:2px solid var(--red)}
+.fg{margin-bottom:10px}
+.fl{font-size:10px;color:var(--muted);letter-spacing:.5px;margin-bottom:4px;display:block}
+.fi{width:100%;background:#0d0f14;border:1px solid var(--border);color:var(--text);padding:8px 10px;border-radius:4px;font-family:var(--font);font-size:12px;outline:none;transition:.15s}
+.fi:focus{border-color:var(--blue)}
+select.fi{cursor:pointer;-webkit-appearance:none;appearance:none}
+.pct-row{display:grid;grid-template-columns:repeat(4,1fr);gap:3px;margin-top:5px}
+.pct{padding:4px;text-align:center;border:1px solid var(--border);border-radius:3px;font-size:10px;cursor:pointer;color:var(--muted);background:transparent;font-family:var(--font)}
+.pct:hover{border-color:var(--blue);color:var(--blue)}
+.meta-box{background:#0d0f14;border-radius:4px;padding:9px 10px;margin:10px 0;font-size:11px}
+.mr{display:flex;justify-content:space-between;padding:2px 0;color:var(--text2)}
+.mr span:last-child{color:var(--text)}
+.sub-btn{width:100%;padding:12px;border-radius:4px;border:none;font-family:var(--head);font-weight:700;font-size:13px;cursor:pointer;letter-spacing:.5px;transition:.15s;text-transform:uppercase}
+.sub-btn.buy{background:var(--green);color:#000}
+.sub-btn.buy:hover{background:#00b870}
+.sub-btn.sell{background:var(--red);color:#fff}
+.sub-btn.sell:hover{background:#e03555}
+.sub-btn:active{transform:scale(.98)}
+.sub-btn:disabled{opacity:.5;cursor:not-allowed;transform:none}
+
+/* History */
+.hist-list{padding:0 14px 14px;overflow-y:auto;max-height:220px}
+.hi{padding:8px 0;border-bottom:1px solid #1a1e28}
+.hi:last-child{border-bottom:none}
+.hi-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:2px}
+.hi-sym{font-family:var(--head);font-weight:600;font-size:12px}
+.hi-st{font-size:10px;padding:2px 6px;border-radius:2px}
+.hi-st.filled{background:#0a2e1a;color:var(--green)}
+.hi-st.canceled{background:#1a1a0a;color:var(--yellow)}
+.hi-st.new{background:#0a1a2e;color:var(--blue)}
+.hi-det{font-size:10px;color:var(--muted)}
+.hi-det span{color:var(--text2)}
+
+/* Footer log */
+.log-scroll{display:flex;flex-direction:column;gap:2px;max-height:90px;overflow-y:auto}
+.ll{display:flex;gap:8px;font-size:11px;padding:1px 0}
+.lt{color:#3d4560;min-width:70px;flex-shrink:0}
+.lv.ok{color:var(--green)}.lv.inf{color:var(--blue)}.lv.err{color:var(--red)}
+.lm{color:var(--text2)}
+
+/* Toast */
+.toast{position:fixed;bottom:20px;right:20px;padding:10px 18px;border-radius:5px;font-family:var(--head);font-size:12px;font-weight:500;z-index:999;opacity:0;transform:translateY(6px);transition:.3s;pointer-events:none}
+.toast.show{opacity:1;transform:translateY(0)}
+.toast.ok{background:#0a3320;border:1px solid var(--green);color:var(--green)}
+.toast.err{background:#2e0a14;border:1px solid var(--red);color:var(--red)}
+
+/* Spinner */
+.spin{display:inline-block;width:12px;height:12px;border:2px solid transparent;border-top-color:currentColor;border-radius:50%;animation:spin .6s linear infinite;vertical-align:middle;margin-right:6px}
+@keyframes spin{to{transform:rotate(360deg)}}
+
+/* Result modal */
+.modal-bg{position:fixed;inset:0;background:rgba(0,0,0,.7);display:flex;align-items:center;justify-content:center;z-index:100;opacity:0;pointer-events:none;transition:.2s}
+.modal-bg.show{opacity:1;pointer-events:all}
+.modal{background:var(--card);border:1px solid var(--border);border-radius:8px;padding:20px;width:360px;max-width:90vw}
+.modal-head{font-family:var(--head);font-weight:700;font-size:15px;margin-bottom:14px;display:flex;justify-content:space-between}
+.modal-close{background:none;border:none;color:var(--muted);cursor:pointer;font-size:18px;line-height:1}
+.modal-row{display:flex;justify-content:space-between;padding:5px 0;border-bottom:1px solid #1e2230;font-size:12px}
+.modal-row:last-child{border-bottom:none}
+.modal-row .k{color:var(--text2)}
+.modal-row .v{color:var(--text);font-weight:500}
+.modal-row .v.ok{color:var(--green)}
+.modal-row .v.err{color:var(--red)}
+.ai-grid{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px}
+.ai-pill{display:inline-flex;align-items:center;gap:6px;border:1px solid var(--border);border-radius:3px;padding:3px 8px;font-family:var(--head);font-size:12px;font-weight:700}
+.ai-pill.buy{background:#0a3320;color:var(--green);border-color:#0f4a28}
+.ai-pill.sell{background:#2e0a14;color:var(--red);border-color:#4a0f20}
+.ai-pill.hold{background:#1a1a0a;color:var(--yellow);border-color:#40350d}
+.ai-stat{background:#0d0f14;border-radius:4px;padding:8px 10px}
+.ai-k{font-size:10px;color:var(--muted);letter-spacing:.5px;text-transform:uppercase}
+.ai-v{font-family:var(--head);font-weight:700;margin-top:3px}
+.ai-note{color:var(--text2);font-size:11px;line-height:1.5;margin-top:10px}
+.ai-actions{display:flex;gap:8px;margin-top:10px}
+.mini-btn{border:1px solid var(--border);background:#0d0f14;color:var(--text2);border-radius:4px;padding:7px 9px;font-family:var(--font);font-size:11px;cursor:pointer}
+.mini-btn:hover{border-color:var(--blue);color:var(--blue)}
+</style>
+</head>
+<body>
+
+<div class="terminal-grid">
+
+<!-- TOP BAR -->
+<header class="topbar">
+  <div class="topbar-left">
+    <div class="logo">BINANCE<span>BOT</span></div>
+    <div class="badge">TESTNET</div>
+    <div class="ticker-wrap" id="tickerWrap">
+      <div class="ticker"><span class="ticker-sym">BTC/USDT</span><span class="ticker-price up" id="tp-BTC">—</span><span class="ticker-chg" id="tc-BTC">—</span></div>
+      <div class="ticker"><span class="ticker-sym">ETH/USDT</span><span class="ticker-price" id="tp-ETH">—</span><span class="ticker-chg" id="tc-ETH">—</span></div>
+      <div class="ticker"><span class="ticker-sym">SOL/USDT</span><span class="ticker-price" id="tp-SOL">—</span><span class="ticker-chg" id="tc-SOL">—</span></div>
+    </div>
+  </div>
+  <div class="topbar-right">
+    <div class="acct-bal">Balance: <span class="acct-val" id="balVal">connecting...</span></div>
+    <div class="conn-dot" id="connDot" title="Connecting..."></div>
+  </div>
+</header>
+
+<!-- MAIN -->
+<main class="main-panel">
+
+  <div class="card">
+    <div class="chart-header">
+      <div>
+        <div class="chart-sym" id="chartSym">BTCUSDT · Perp</div>
+        <div class="chart-price" id="chartPrice">—</div>
+        <div class="chart-sub" id="chartSub">Loading live price...</div>
+      </div>
+      <div style="text-align:right">
+        <div style="font-size:10px;color:var(--muted);margin-bottom:3px">Unrealized PnL</div>
+        <div style="font-family:var(--head);font-weight:700;font-size:15px" id="upnl">—</div>
+      </div>
+    </div>
+    <div class="tf-row">
+      <button class="tf">1m</button><button class="tf">5m</button><button class="tf active">15m</button>
+      <button class="tf">1h</button><button class="tf">4h</button><button class="tf">1D</button>
+    </div>
+    <canvas id="chart" height="140"></canvas>
+  </div>
+
+  <!-- CLI Preview -->
+  <div class="card">
+    <div class="sec-head">CLI equivalent</div>
+    <div id="cliLine" style="color:var(--green);font-size:11px;line-height:1.7;word-break:break-all">
+      <span style="color:var(--muted)">$</span> python cli.py order ...
+    </div>
+  </div>
+
+  <!-- AI Signal -->
+  <div class="card">
+    <div class="sec-head">AI Signal & Risk Copilot</div>
+    <div style="display:flex;justify-content:space-between;align-items:center;gap:10px;margin-bottom:10px">
+      <span class="ai-pill hold" id="aiAction">LOADING</span>
+      <span style="font-size:11px;color:var(--muted)" id="aiModel">15m candles · rule model v1</span>
+    </div>
+    <div class="ai-grid">
+      <div class="ai-stat"><div class="ai-k">Confidence</div><div class="ai-v" id="aiConf">—</div></div>
+      <div class="ai-stat"><div class="ai-k">Suggested Qty</div><div class="ai-v" id="aiQty">—</div></div>
+      <div class="ai-stat"><div class="ai-k">Backtest</div><div class="ai-v" id="aiBacktest">—</div></div>
+      <div class="ai-stat"><div class="ai-k">Stop Loss</div><div class="ai-v" id="aiStop">—</div></div>
+      <div class="ai-stat"><div class="ai-k">Take Profit</div><div class="ai-v" id="aiTake">—</div></div>
+      <div class="ai-stat"><div class="ai-k">RSI / Vol</div><div class="ai-v" id="aiRsi">—</div></div>
+    </div>
+    <div class="ai-note" id="aiReason">Waiting for market candles...</div>
+    <div class="ai-actions">
+      <button class="mini-btn" onclick="applyAiSuggestion()">Apply Suggestion</button>
+      <button class="mini-btn" onclick="loadAi()">Refresh AI</button>
+    </div>
+  </div>
+
+  <!-- Open Orders -->
+  <div class="card">
+    <div class="sec-head">Open Orders <span id="ooCount" style="color:var(--blue)"></span></div>
+    <div id="openOrders" style="font-size:11px;color:var(--muted)">Loading...</div>
+  </div>
+
+</main>
+
+<!-- SIDE PANEL -->
+<aside class="side-panel">
+  <div class="order-form">
+    <div class="form-sym"><span id="fSym">BTCUSDT</span><span class="perp-tag">PERPETUAL</span></div>
+
+    <div class="fg">
+      <label class="fl">SYMBOL</label>
+      <select class="fi" id="symSel" onchange="onSymChange()">
+        <option>BTCUSDT</option><option>ETHUSDT</option><option>SOLUSDT</option>
+        <option>BNBUSDT</option><option>LINKUSDT</option><option>ADAUSDT</option>
+      </select>
+    </div>
+
+    <div class="buy-sell">
+      <button class="bs buy on" id="bBuy" onclick="setSide('BUY')">BUY / LONG</button>
+      <button class="bs sell" id="bSell" onclick="setSide('SELL')">SELL / SHORT</button>
+    </div>
+
+    <div class="fg">
+      <label class="fl">ORDER TYPE</label>
+      <select class="fi" id="oType" onchange="onTypeChange()">
+        <option value="MARKET">Market</option>
+        <option value="LIMIT" selected>Limit</option>
+        <option value="STOP_MARKET">Stop Market</option>
+        <option value="STOP">Stop Limit</option>
+      </select>
+    </div>
+
+    <div class="fg" id="priceGrp">
+      <label class="fl">PRICE (USDT)</label>
+      <input class="fi" type="number" id="priceIn" value="64281.50" oninput="updateMeta()">
+    </div>
+
+    <div class="fg" id="stopGrp" style="display:none">
+      <label class="fl">STOP PRICE (USDT)</label>
+      <input class="fi" type="number" id="stopIn" placeholder="Trigger price" oninput="updateMeta()">
+    </div>
+
+    <div class="fg">
+      <label class="fl">QUANTITY</label>
+      <input class="fi" type="number" id="qtyIn" value="0.010" step="0.001" oninput="updateMeta()">
+      <div class="pct-row">
+        <button class="pct" onclick="setPct(25)">25%</button>
+        <button class="pct" onclick="setPct(50)">50%</button>
+        <button class="pct" onclick="setPct(75)">75%</button>
+        <button class="pct" onclick="setPct(100)">100%</button>
+      </div>
+    </div>
+
+    <div class="fg">
+      <label class="fl" style="display:flex;justify-content:space-between">LEVERAGE <span id="levLbl" style="color:var(--yellow)">10×</span></label>
+      <input type="range" id="levR" min="1" max="125" value="10" oninput="document.getElementById('levLbl').textContent=this.value+'×';updateMeta()" style="width:100%">
+    </div>
+
+    <div class="meta-box">
+      <div class="mr"><span>Cost</span><span id="mCost">—</span></div>
+      <div class="mr"><span>Margin</span><span id="mMargin">—</span></div>
+      <div class="mr"><span>Est. Liq.</span><span id="mLiq">—</span></div>
+      <div class="mr"><span>Trading Fee</span><span id="mFee">—</span></div>
+    </div>
+
+    <button class="sub-btn buy" id="subBtn" onclick="placeOrder()">BUY / LONG</button>
+  </div>
+
+  <div style="padding:0 14px 6px"><div class="sec-head">Order History</div></div>
+  <div class="hist-list" id="histList">
+    <div style="color:var(--muted);font-size:11px">No orders yet.</div>
+  </div>
+</aside>
+
+<!-- FOOTER LOG -->
+<footer class="footer">
+  <div class="log-scroll" id="logScroll">
+    <div class="ll"><span class="lt">—</span><span class="lv inf">INF</span><span class="lm">Connecting to Binance Futures Testnet...</span></div>
+  </div>
+</footer>
+
+</div>
+
+<div class="toast" id="toast"></div>
+
+<!-- Result Modal -->
+<div class="modal-bg" id="modalBg">
+  <div class="modal">
+    <div class="modal-head">
+      <span id="modalTitle">Order Result</span>
+      <button class="modal-close" onclick="closeModal()">×</button>
+    </div>
+    <div id="modalBody"></div>
+  </div>
+</div>
+
+<script>
+const API = '';  // same origin
+let side = 'BUY';
+let livePrice = {};
+let connected = false;
+let historyItems = [];
+let latestAi = null;
+
+// ── Connection & account ───────────────────────────────────────
+async function init() {
+  addLog('Connecting to testnet...', 'inf');
+  try {
+    const r = await fetch(API + '/api/ping');
+    const d = await r.json();
+    if (d.connected) {
+      connected = true;
+      document.getElementById('connDot').className = 'conn-dot live';
+      addLog('Connected to Binance Futures Testnet', 'ok');
+      loadAccount();
+      loadPrices();
+      loadOpenOrders();
+      loadAi();
+      setInterval(loadPrices, 5000);
+      setInterval(loadOpenOrders, 15000);
+      setInterval(loadAi, 30000);
+    } else {
+      throw new Error('Ping failed');
+    }
+  } catch (e) {
+    document.getElementById('connDot').className = 'conn-dot err';
+    document.getElementById('balVal').textContent = 'disconnected';
+    addLog('Cannot reach testnet: ' + e.message, 'err');
+  }
+}
+
+async function loadAccount() {
+  try {
+    const r = await fetch(API + '/api/account');
+    const d = await r.json();
+    document.getElementById('balVal').textContent = d.totalBalance.toLocaleString('en', {minimumFractionDigits: 2}) + ' USDT';
+    const pnl = d.unrealizedPnl;
+    const upnlEl = document.getElementById('upnl');
+    upnlEl.textContent = (pnl >= 0 ? '+' : '') + pnl.toFixed(2) + ' USDT';
+    upnlEl.style.color = pnl >= 0 ? 'var(--green)' : 'var(--red)';
+    addLog('Account loaded — balance: ' + d.totalBalance + ' USDT', 'ok');
+  } catch (e) {
+    addLog('Failed to load account: ' + e.message, 'err');
+  }
+}
+
+async function loadPrices() {
+  const syms = ['BTCUSDT', 'ETHUSDT', 'SOLUSDT'];
+  const keys = ['BTC', 'ETH', 'SOL'];
+  for (let i = 0; i < syms.length; i++) {
+    try {
+      const r = await fetch(API + '/api/price/' + syms[i]);
+      const d = await r.json();
+      const prev = livePrice[syms[i]] || d.price;
+      livePrice[syms[i]] = d.price;
+      const chg = ((d.price - prev) / prev * 100);
+      const el = document.getElementById('tp-' + keys[i]);
+      const ce = document.getElementById('tc-' + keys[i]);
+      el.textContent = d.price.toLocaleString('en', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+      el.className = 'ticker-price ' + (chg >= 0 ? 'up' : 'dn');
+      ce.textContent = (chg >= 0 ? '+' : '') + chg.toFixed(3) + '%';
+      ce.className = 'ticker-chg ' + (chg >= 0 ? 'up' : 'dn');
+    } catch (e) { /* silent */ }
+  }
+  // update chart for selected symbol
+  const sel = document.getElementById('symSel').value;
+  if (livePrice[sel]) {
+    const p = livePrice[sel];
+    document.getElementById('chartPrice').textContent = '$' + p.toLocaleString('en', {minimumFractionDigits: 2, maximumFractionDigits: 2});
+    document.getElementById('chartSub').textContent = 'Live price · testnet.binancefuture.com';
+    if (!document.getElementById('priceIn').dataset.userEdited)
+      document.getElementById('priceIn').value = p.toFixed(2);
+    updateMeta();
+    drawChart(sel);
+  }
+}
+
+async function loadOpenOrders() {
+  const sym = document.getElementById('symSel').value;
+  try {
+    const r = await fetch(API + '/api/open-orders?symbol=' + sym);
+    const d = await r.json();
+    const oo = d.orders || [];
+    document.getElementById('ooCount').textContent = oo.length ? '(' + oo.length + ')' : '';
+    const el = document.getElementById('openOrders');
+    if (!oo.length) {
+      el.innerHTML = '<span style="color:var(--muted)">No open orders for ' + sym + '</span>';
+      return;
+    }
+    el.innerHTML = oo.map(o =>
+      `<div style="padding:5px 0;border-bottom:1px solid #1e2230">
+        <span style="font-family:var(--head);font-weight:600">${o.symbol}</span>
+        <span class="tag ${o.side === 'BUY' ? 'long' : 'short'}" style="margin-left:6px">${o.side}</span>
+        <span style="color:var(--text2);margin-left:6px">${o.type} qty=${o.origQty} @${o.price}</span>
+        <span style="color:var(--muted);font-size:10px;float:right">#${o.orderId}</span>
+      </div>`
+    ).join('');
+  } catch (e) { /* silent */ }
+}
+
+// ── Order form ─────────────────────────────────────────────────
+function setSide(s) {
+  side = s;
+  document.getElementById('bBuy').className = 'bs buy' + (s === 'BUY' ? ' on' : '');
+  document.getElementById('bSell').className = 'bs sell' + (s === 'SELL' ? ' on' : '');
+  const btn = document.getElementById('subBtn');
+  btn.className = 'sub-btn ' + (s === 'BUY' ? 'buy' : 'sell');
+  btn.textContent = s === 'BUY' ? 'BUY / LONG' : 'SELL / SHORT';
+  updateMeta();
+}
+
+function onSymChange() {
+  const sym = document.getElementById('symSel').value;
+  document.getElementById('fSym').textContent = sym;
+  document.getElementById('chartSym').textContent = sym + ' · Perp';
+  delete document.getElementById('priceIn').dataset.userEdited;
+  if (livePrice[sym]) {
+    document.getElementById('priceIn').value = livePrice[sym].toFixed(2);
+  }
+  updateMeta(); drawChart(sym); loadOpenOrders();
+  loadAi();
+}
+
+function onTypeChange() {
+  const t = document.getElementById('oType').value;
+  document.getElementById('priceGrp').style.display = (t === 'MARKET' || t === 'STOP_MARKET') ? 'none' : '';
+  document.getElementById('stopGrp').style.display = (t === 'STOP' || t === 'STOP_MARKET') ? '' : 'none';
+  updateMeta();
+}
+
+function setPct(p) {
+  document.getElementById('qtyIn').value = (0.1 * p / 100 * 14.58).toFixed(3);
+  updateMeta();
+}
+
+function updateMeta() {
+  const sym = document.getElementById('symSel').value;
+  const price = parseFloat(document.getElementById('priceIn').value) || livePrice[sym] || 0;
+  const qty = parseFloat(document.getElementById('qtyIn').value) || 0;
+  const lev = parseInt(document.getElementById('levR').value) || 10;
+  const cost = price * qty;
+  const margin = cost / lev;
+  const fee = cost * 0.0004;
+  const liqOff = (side === 'BUY' ? -1 : 1) * (price / lev * 0.9);
+  document.getElementById('mCost').textContent = cost.toFixed(2) + ' USDT';
+  document.getElementById('mMargin').textContent = margin.toFixed(2) + ' USDT';
+  document.getElementById('mLiq').textContent = '~' + (price + liqOff).toFixed(0);
+  document.getElementById('mFee').textContent = fee.toFixed(4) + ' USDT';
+  updateCli();
+}
+
+function updateCli() {
+  const sym = document.getElementById('symSel').value;
+  const type = document.getElementById('oType').value;
+  const qty = document.getElementById('qtyIn').value || '0.010';
+  const price = document.getElementById('priceIn').value || '';
+  const stop = document.getElementById('stopIn').value || '';
+  let cmd = `python cli.py order --symbol ${sym} --side ${side} --type ${type} --qty ${qty}`;
+  if (type === 'LIMIT' || type === 'STOP') cmd += ` --price ${price}`;
+  if ((type === 'STOP' || type === 'STOP_MARKET') && stop) cmd += ` --stop-price ${stop}`;
+  document.getElementById('cliLine').innerHTML = '<span style="color:var(--muted)">$</span> ' + cmd;
+}
+
+async function placeOrder() {
+  const sym = document.getElementById('symSel').value;
+  const type = document.getElementById('oType').value;
+  const qty = parseFloat(document.getElementById('qtyIn').value);
+  const price = parseFloat(document.getElementById('priceIn').value) || null;
+  const stop = parseFloat(document.getElementById('stopIn').value) || null;
+
+  const btn = document.getElementById('subBtn');
+  btn.disabled = true;
+  btn.innerHTML = '<span class="spin"></span>Placing order...';
+  addLog(`Submitting ${type} ${side} ${sym} qty=${qty}...`, 'inf');
+
+  try {
+    const res = await fetch(API + '/api/order', {
+      method: 'POST',
+      headers: {'Content-Type': 'application/json'},
+      body: JSON.stringify({
+        symbol: sym, side, order_type: type, quantity: qty,
+        price: (type === 'LIMIT' || type === 'STOP') ? price : null,
+        stop_price: stop
+      })
+    });
+    const d = await res.json();
+    if (!res.ok) throw new Error(d.detail || 'Order failed');
+
+    // Success
+    addLog(`Order ${d.orderId} ${d.status} — ${sym} ${side} ${type} ${d.origQty}@${d.avgPrice || d.price}`, 'ok');
+    showToast(`✔ ${side} ${sym} — ${d.status}`, 'ok');
+    addToHistory(d);
+    showModal(d, true);
+    loadOpenOrders();
+  } catch (e) {
+    addLog('Order error: ' + e.message, 'err');
+    showToast('✖ ' + e.message, 'err');
+    showModal({error: e.message}, false);
+  } finally {
+    btn.disabled = false;
+    btn.textContent = side === 'BUY' ? 'BUY / LONG' : 'SELL / SHORT';
+  }
+}
+
+async function loadAi() {
+  const sym = document.getElementById('symSel').value;
+  try {
+    const [sigRes, btRes] = await Promise.all([
+      fetch(API + '/api/ai/signal/' + sym),
+      fetch(API + '/api/ai/backtest/' + sym)
+    ]);
+    const sig = await sigRes.json();
+    const bt = await btRes.json();
+    if (!sigRes.ok) throw new Error(sig.detail || 'Signal failed');
+    latestAi = sig;
+    const action = document.getElementById('aiAction');
+    action.textContent = sig.action;
+    action.className = 'ai-pill ' + sig.action.toLowerCase();
+    document.getElementById('aiConf').textContent = sig.confidence + '%';
+    document.getElementById('aiQty').textContent = sig.risk.suggestedQty || '—';
+    document.getElementById('aiStop').textContent = sig.risk.stopLoss ? '$' + sig.risk.stopLoss.toLocaleString() : '—';
+    document.getElementById('aiTake').textContent = sig.risk.takeProfit ? '$' + sig.risk.takeProfit.toLocaleString() : '—';
+    document.getElementById('aiRsi').textContent = sig.metrics.rsi + ' / ' + sig.metrics.volatilityPct + '%';
+    document.getElementById('aiReason').textContent = sig.reason + ' Score: ' + sig.score + '. Risk is capped at 1% of balance.';
+    if (btRes.ok) {
+      document.getElementById('aiBacktest').textContent = bt.winRate + '% · ' + bt.pnl + ' USDT';
+    }
+  } catch (e) {
+    document.getElementById('aiAction').textContent = 'ERROR';
+    document.getElementById('aiAction').className = 'ai-pill hold';
+    document.getElementById('aiReason').textContent = e.message;
+  }
+}
+
+function applyAiSuggestion() {
+  if (!latestAi || latestAi.action === 'HOLD') {
+    showToast('No trade suggestion to apply', 'err');
+    return;
+  }
+  setSide(latestAi.action);
+  document.getElementById('oType').value = 'LIMIT';
+  onTypeChange();
+  document.getElementById('qtyIn').value = latestAi.risk.suggestedQty || document.getElementById('qtyIn').value;
+  document.getElementById('priceIn').value = latestAi.metrics.price;
+  document.getElementById('priceIn').dataset.userEdited = '1';
+  updateMeta();
+  showToast('AI suggestion applied to order form', 'ok');
+}
+
+function addToHistory(o) {
+  historyItems.unshift(o);
+  const list = document.getElementById('histList');
+  const item = document.createElement('div');
+  item.className = 'hi';
+  const st = (o.status || 'NEW').toLowerCase();
+  item.innerHTML = `
+    <div class="hi-row">
+      <span class="hi-sym">${o.symbol}</span>
+      <span class="hi-st ${st}">${o.status || 'NEW'}</span>
+    </div>
+    <div class="hi-det">${o.side} ${o.type} · ${o.origQty} · @<span>${parseFloat(o.avgPrice||o.price||0).toLocaleString()}</span></div>
+    <div class="hi-det" style="margin-top:2px;color:#3d4560">#${o.orderId}</div>
+  `;
+  if (list.children[0] && list.children[0].style.color === 'var(--muted)') list.innerHTML = '';
+  list.insertBefore(item, list.firstChild);
+}
+
+// ── Modal ──────────────────────────────────────────────────────
+function showModal(o, success) {
+  const title = document.getElementById('modalTitle');
+  const body = document.getElementById('modalBody');
+  if (!success) {
+    title.textContent = '✖ Order Failed';
+    title.style.color = 'var(--red)';
+    body.innerHTML = `<div class="modal-row"><span class="k">Error</span><span class="v err">${o.error}</span></div>`;
+  } else {
+    title.textContent = '✔ Order Placed';
+    title.style.color = 'var(--green)';
+    const rows = [
+      ['Order ID', o.orderId],
+      ['Symbol', o.symbol],
+      ['Side', o.side],
+      ['Type', o.type],
+      ['Status', o.status],
+      ['Quantity', o.origQty],
+      ['Executed', o.executedQty],
+      ['Avg Price', o.avgPrice || '—'],
+      ['Price', o.price || '—'],
+    ];
+    body.innerHTML = rows.map(([k, v]) =>
+      `<div class="modal-row"><span class="k">${k}</span><span class="v ${k==='Status'&&v==='FILLED'?'ok':''}">${v}</span></div>`
+    ).join('');
+  }
+  document.getElementById('modalBg').className = 'modal-bg show';
+}
+function closeModal() { document.getElementById('modalBg').className = 'modal-bg'; }
+document.getElementById('modalBg').addEventListener('click', e => { if (e.target === e.currentTarget) closeModal(); });
+
+// ── Chart ──────────────────────────────────────────────────────
+const chartData = {};
+function drawChart(sym) {
+  const canvas = document.getElementById('chart');
+  const ctx = canvas.getContext('2d');
+  const W = canvas.offsetWidth || 600, H = 140;
+  canvas.width = W; canvas.height = H;
+  ctx.clearRect(0, 0, W, H);
+
+  const base = livePrice[sym] || 64000;
+  if (!chartData[sym]) chartData[sym] = Array.from({length:60},(_,i)=>base*(1+Math.sin(i*.3)*.01+(Math.random()-.5)*.005));
+  else { chartData[sym].push(base*(1+(Math.random()-.5)*.002)); if(chartData[sym].length>60) chartData[sym].shift(); }
+
+  const data = chartData[sym];
+  const mn = Math.min(...data)*.9995, mx = Math.max(...data)*1.0005;
+  const sc = v => H - ((v-mn)/(mx-mn))*(H-16) - 8;
+  const sx = i => (i/(data.length-1))*W;
+
+  // Grid
+  ctx.strokeStyle = '#1e2230'; ctx.lineWidth = .5;
+  [.25,.5,.75].forEach(r=>{ctx.beginPath();ctx.moveTo(0,H*r);ctx.lineTo(W,H*r);ctx.stroke()});
+
+  // Area
+  const grad = ctx.createLinearGradient(0,0,0,H);
+  grad.addColorStop(0,'rgba(0,208,132,.15)'); grad.addColorStop(1,'rgba(0,208,132,0)');
+  ctx.beginPath(); ctx.moveTo(sx(0),H);
+  data.forEach((v,i)=>ctx.lineTo(sx(i),sc(v)));
+  ctx.lineTo(sx(data.length-1),H); ctx.closePath();
+  ctx.fillStyle=grad; ctx.fill();
+
+  // Line
+  ctx.beginPath(); ctx.strokeStyle='#00d084'; ctx.lineWidth=1.5; ctx.lineJoin='round';
+  data.forEach((v,i)=>i===0?ctx.moveTo(sx(i),sc(v)):ctx.lineTo(sx(i),sc(v)));
+  ctx.stroke();
+
+  // Last price dash
+  const lastY = sc(data[data.length-1]);
+  ctx.setLineDash([4,4]); ctx.strokeStyle='#00d08466'; ctx.lineWidth=1;
+  ctx.beginPath(); ctx.moveTo(0,lastY); ctx.lineTo(W,lastY); ctx.stroke();
+  ctx.setLineDash([]);
+}
+
+// ── Util ───────────────────────────────────────────────────────
+function addLog(msg, level='inf') {
+  const t = new Date().toTimeString().slice(0,8);
+  const scroll = document.getElementById('logScroll');
+  const line = document.createElement('div');
+  line.className = 'll';
+  const lvMap = {ok:'ok',err:'err',inf:'inf'};
+  const lvLabel = {ok:'OK ',err:'ERR',inf:'INF'};
+  line.innerHTML = `<span class="lt">${t}</span><span class="lv ${lvMap[level]||'inf'}">${lvLabel[level]||'INF'}</span><span class="lm">${msg}</span>`;
+  scroll.insertBefore(line, scroll.firstChild);
+  while(scroll.children.length > 8) scroll.removeChild(scroll.lastChild);
+}
+
+function showToast(msg, type) {
+  const t = document.getElementById('toast');
+  t.textContent = msg; t.className = 'toast ' + type + ' show';
+  setTimeout(() => t.className = 'toast', 3500);
+}
+
+document.querySelectorAll('.tf').forEach(b => {
+  b.onclick = () => { document.querySelectorAll('.tf').forEach(x=>x.classList.remove('active')); b.classList.add('active'); drawChart(document.getElementById('symSel').value); };
+});
+
+document.getElementById('priceIn').addEventListener('input', () => {
+  document.getElementById('priceIn').dataset.userEdited = '1';
+  updateMeta();
+});
+
+init();
+</script>
+</body>
+</html>
