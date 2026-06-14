@@ -4,6 +4,7 @@ import os
 import time
 from typing import Any, Dict, Optional
 from urllib.parse import urlencode
+import numpy
 
 import requests
 
