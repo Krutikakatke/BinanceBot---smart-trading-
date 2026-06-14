@@ -1,0 +1,553 @@
+2026-06-14 07:22:12 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:22:12 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ping | params={}
+2026-06-14 07:22:12 | ERROR    | client | Network error on GET /fapi/v1/ping: HTTPSConnectionPool(host='demo-fapi.binance.com', port=443): Max retries exceeded with url: /fapi/v1/ping (Caused by NameResolutionError("HTTPSConnection(host='demo-fapi.binance.com', port=443): Failed to resolve 'demo-fapi.binance.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2026-06-14 07:22:21 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:22:21 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ping | params={}
+2026-06-14 07:22:21 | ERROR    | client | Network error on GET /fapi/v1/ping: HTTPSConnectionPool(host='demo-fapi.binance.com', port=443): Max retries exceeded with url: /fapi/v1/ping (Caused by NameResolutionError("HTTPSConnection(host='demo-fapi.binance.com', port=443): Failed to resolve 'demo-fapi.binance.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2026-06-14 07:22:23 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:22:23 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ping | params={}
+2026-06-14 07:22:23 | ERROR    | client | Network error on GET /fapi/v1/ping: HTTPSConnectionPool(host='demo-fapi.binance.com', port=443): Max retries exceeded with url: /fapi/v1/ping (Caused by NameResolutionError("HTTPSConnection(host='demo-fapi.binance.com', port=443): Failed to resolve 'demo-fapi.binance.com' ([Errno 8] nodename nor servname provided, or not known)"))
+2026-06-14 07:22:59 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:22:59 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ping | params={}
+2026-06-14 07:23:00 | DEBUG    | client | Response 200: {}
+2026-06-14 07:23:00 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:23:00 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v2/account | params={'timestamp': 1781401980045, 'signature': '906dd1ebfacebd8d3e63d219b1df84e487b61243f8b2402f4ade7cb90f1c4f6d'}
+2026-06-14 07:23:00 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:23:00 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:23:00 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'BTCUSDT'}
+2026-06-14 07:23:00 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:23:00 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/openOrders | params={'symbol': 'BTCUSDT', 'timestamp': 1781401980055, 'signature': '507c4b562466fc4f8a4cafed7520780cd0091796513189e6d629e58fd569456b'}
+2026-06-14 07:23:00 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:23:00 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/klines | params={'symbol': 'BTCUSDT', 'interval': '15m', 'limit': 160}
+2026-06-14 07:23:00 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/klines | params={'symbol': 'BTCUSDT', 'interval': '15m', 'limit': 300}
+2026-06-14 07:23:00 | DEBUG    | client | Response 200: []
+2026-06-14 07:23:00 | DEBUG    | client | Response 200: [[1781258400000,"63730.00","63807.60","63708.00","63741.20","15238.0636",1781259299999,"971498872.151290",7560,"6722.1041","428610602.755100","0"],[1781259300000,"63741.10","63807.50","63568.20","63572.60","20448.5982",1781260199999,"1302402160.272110",8631,"359.1771","22895457.178250","0"],[1781260200000,"63572.90","63678.40","63568.20","63641.30","17154.2564",1781261099999,"1091596867.704040",9131,"14134.6726","899403948.456110","0"],[1781261100000,"63641.20","63700.10","63640.10","63681.80","
+2026-06-14 07:23:00 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v2/account | params={'timestamp': 1781401980629, 'signature': 'a8150e56f5a7c0f8e3eb837ba5802eb8bea385f1e6803caee85f1d66faef6e0a'}
+2026-06-14 07:23:00 | DEBUG    | client | Response 200: {"price":"64595.30","symbol":"BTCUSDT","time":1781401975658}
+2026-06-14 07:23:00 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:23:00 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'ETHUSDT'}
+2026-06-14 07:23:00 | DEBUG    | client | Response 200: {"feeTier":0,"canTrade":true,"canDeposit":true,"canWithdraw":true,"feeBurn":true,"tradeGroupId":-1,"updateTime":0,"multiAssetsMargin":false,"totalInitialMargin":"32.29851802","totalMaintMargin":"2.58388144","totalWalletBalance":"4999.06095022","totalUnrealizedProfit":"4.68861027","totalMarginBalance":"5003.74956049","totalPositionInitialMargin":"32.29851802","totalOpenOrderInitialMargin":"0.00000000","totalCrossWalletBalance":"4999.06095022","totalCrossUnPnl":"4.68861027","availableBalance":"497
+2026-06-14 07:23:00 | DEBUG    | client | Response 200: [[1781132400000,"61405.20","61405.60","61192.00","61192.00","24860.0138",1781133299999,"1523979420.304430",8124,"7183.5442","440490766.872860","0"],[1781133300000,"61192.00","61485.00","61192.00","61483.00","22259.8555",1781134199999,"1365516971.341960",6530,"21314.9060","1307511456.741670","0"],[1781134200000,"61482.90","61634.80","61447.20","61564.50","23100.1365",1781135099999,"1420792963.465660",6643,"12301.3473","756741086.617810","0"],[1781135100000,"61564.50","61565.20","61473.60","61526.
+2026-06-14 07:23:00 | DEBUG    | client | Response 200: {"feeTier":0,"canTrade":true,"canDeposit":true,"canWithdraw":true,"feeBurn":true,"tradeGroupId":-1,"updateTime":0,"multiAssetsMargin":false,"totalInitialMargin":"32.29852019","totalMaintMargin":"2.58388161","totalWalletBalance":"4999.06095022","totalUnrealizedProfit":"4.68865375","totalMarginBalance":"5003.74960397","totalPositionInitialMargin":"32.29852019","totalOpenOrderInitialMargin":"0.00000000","totalCrossWalletBalance":"4999.06095022","totalCrossUnPnl":"4.68865375","availableBalance":"497
+2026-06-14 07:23:01 | DEBUG    | client | Response 200: {"price":"1685.20","symbol":"ETHUSDT","time":1781401977878}
+2026-06-14 07:23:01 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:23:01 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'SOLUSDT'}
+2026-06-14 07:23:01 | DEBUG    | client | Response 200: {"price":"68.8900","symbol":"SOLUSDT","time":1781401976440}
+2026-06-14 07:23:05 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:23:05 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'BTCUSDT'}
+2026-06-14 07:23:05 | DEBUG    | client | Response 200: {"price":"64595.30","symbol":"BTCUSDT","time":1781401981746}
+2026-06-14 07:23:05 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:23:05 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'ETHUSDT'}
+2026-06-14 07:23:06 | DEBUG    | client | Response 200: {"price":"1685.20","symbol":"ETHUSDT","time":1781401980815}
+2026-06-14 07:23:06 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:23:06 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'SOLUSDT'}
+2026-06-14 07:23:06 | DEBUG    | client | Response 200: {"price":"68.8800","symbol":"SOLUSDT","time":1781401980636}
+2026-06-14 07:23:10 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:23:10 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'BTCUSDT'}
+2026-06-14 07:23:10 | DEBUG    | client | Response 200: {"price":"64595.20","symbol":"BTCUSDT","time":1781401985820}
+2026-06-14 07:23:10 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:23:10 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'ETHUSDT'}
+2026-06-14 07:23:11 | DEBUG    | client | Response 200: {"price":"1685.20","symbol":"ETHUSDT","time":1781401985442}
+2026-06-14 07:23:11 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:23:11 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'SOLUSDT'}
+2026-06-14 07:23:11 | DEBUG    | client | Response 200: {"price":"68.8800","symbol":"SOLUSDT","time":1781401986177}
+2026-06-14 07:23:15 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:23:15 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/openOrders | params={'symbol': 'BTCUSDT', 'timestamp': 1781401995048, 'signature': '14d52b5457dee2fb5bd1fd84f9ffd731433fd20bebbba7a1a2e6f6721c234e36'}
+2026-06-14 07:23:15 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:23:15 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'BTCUSDT'}
+2026-06-14 07:23:15 | DEBUG    | client | Response 200: {"price":"64595.20","symbol":"BTCUSDT","time":1781401991758}
+2026-06-14 07:23:15 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:23:15 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'ETHUSDT'}
+2026-06-14 07:23:15 | DEBUG    | client | Response 200: []
+2026-06-14 07:23:16 | DEBUG    | client | Response 200: {"price":"1685.21","symbol":"ETHUSDT","time":1781401991584}
+2026-06-14 07:23:16 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:23:16 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'SOLUSDT'}
+2026-06-14 07:23:16 | DEBUG    | client | Response 200: {"price":"68.8800","symbol":"SOLUSDT","time":1781401991945}
+2026-06-14 07:23:20 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:23:20 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'BTCUSDT'}
+2026-06-14 07:23:20 | DEBUG    | client | Response 200: {"price":"64595.00","symbol":"BTCUSDT","time":1781401997699}
+2026-06-14 07:23:20 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:23:20 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'ETHUSDT'}
+2026-06-14 07:23:21 | DEBUG    | client | Response 200: {"price":"1685.21","symbol":"ETHUSDT","time":1781401994321}
+2026-06-14 07:23:21 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:23:21 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'SOLUSDT'}
+2026-06-14 07:23:21 | DEBUG    | client | Response 200: {"price":"68.8800","symbol":"SOLUSDT","time":1781401996366}
+2026-06-14 07:23:25 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:23:25 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'BTCUSDT'}
+2026-06-14 07:23:25 | DEBUG    | client | Response 200: {"price":"64587.00","symbol":"BTCUSDT","time":1781402001433}
+2026-06-14 07:23:25 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:23:25 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'ETHUSDT'}
+2026-06-14 07:23:26 | DEBUG    | client | Response 200: {"price":"1685.45","symbol":"ETHUSDT","time":1781402001284}
+2026-06-14 07:23:26 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:23:26 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'SOLUSDT'}
+2026-06-14 07:23:26 | DEBUG    | client | Response 200: {"price":"68.8800","symbol":"SOLUSDT","time":1781402000430}
+2026-06-14 07:23:30 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:23:30 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/klines | params={'symbol': 'BTCUSDT', 'interval': '15m', 'limit': 160}
+2026-06-14 07:23:30 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:23:30 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/klines | params={'symbol': 'BTCUSDT', 'interval': '15m', 'limit': 300}
+2026-06-14 07:23:30 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:23:30 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/openOrders | params={'symbol': 'BTCUSDT', 'timestamp': 1781402010052, 'signature': 'f5c0043e191fc889d286b68339d748fb42fc251161e46268ee52e200ab307052'}
+2026-06-14 07:23:30 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:23:30 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'BTCUSDT'}
+2026-06-14 07:23:30 | DEBUG    | client | Response 200: []
+2026-06-14 07:23:30 | DEBUG    | client | Response 200: [[1781258400000,"63730.00","63807.60","63708.00","63741.20","15238.0636",1781259299999,"971498872.151290",7560,"6722.1041","428610602.755100","0"],[1781259300000,"63741.10","63807.50","63568.20","63572.60","20448.5982",1781260199999,"1302402160.272110",8631,"359.1771","22895457.178250","0"],[1781260200000,"63572.90","63678.40","63568.20","63641.30","17154.2564",1781261099999,"1091596867.704040",9131,"14134.6726","899403948.456110","0"],[1781261100000,"63641.20","63700.10","63640.10","63681.80","
+2026-06-14 07:23:30 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v2/account | params={'timestamp': 1781402010643, 'signature': 'ed5390fe1e8622d5ba00eb07c6396ddb31c785a15ea492b7e220b372f0ba65c0'}
+2026-06-14 07:23:30 | DEBUG    | client | Response 200: {"price":"64587.00","symbol":"BTCUSDT","time":1781402005427}
+2026-06-14 07:23:30 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:23:30 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'ETHUSDT'}
+2026-06-14 07:23:30 | DEBUG    | client | Response 200: [[1781132400000,"61405.20","61405.60","61192.00","61192.00","24860.0138",1781133299999,"1523979420.304430",8124,"7183.5442","440490766.872860","0"],[1781133300000,"61192.00","61485.00","61192.00","61483.00","22259.8555",1781134199999,"1365516971.341960",6530,"21314.9060","1307511456.741670","0"],[1781134200000,"61482.90","61634.80","61447.20","61564.50","23100.1365",1781135099999,"1420792963.465660",6643,"12301.3473","756741086.617810","0"],[1781135100000,"61564.50","61565.20","61473.60","61526.
+2026-06-14 07:23:30 | DEBUG    | client | Response 200: {"feeTier":0,"canTrade":true,"canDeposit":true,"canWithdraw":true,"feeBurn":true,"tradeGroupId":-1,"updateTime":0,"multiAssetsMargin":false,"totalInitialMargin":"32.29380315","totalMaintMargin":"2.58350425","totalWalletBalance":"4999.06095022","totalUnrealizedProfit":"4.59431286","totalMarginBalance":"5003.65526308","totalPositionInitialMargin":"32.29380315","totalOpenOrderInitialMargin":"0.00000000","totalCrossWalletBalance":"4999.06095022","totalCrossUnPnl":"4.59431286","availableBalance":"497
+2026-06-14 07:23:31 | DEBUG    | client | Response 200: {"price":"1685.41","symbol":"ETHUSDT","time":1781402006007}
+2026-06-14 07:23:31 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:23:31 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'SOLUSDT'}
+2026-06-14 07:23:31 | DEBUG    | client | Response 200: {"price":"68.8800","symbol":"SOLUSDT","time":1781402005852}
+2026-06-14 07:23:35 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:23:35 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'BTCUSDT'}
+2026-06-14 07:23:35 | DEBUG    | client | Response 200: {"price":"64586.10","symbol":"BTCUSDT","time":1781402011548}
+2026-06-14 07:23:35 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:23:35 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'ETHUSDT'}
+2026-06-14 07:23:36 | DEBUG    | client | Response 200: {"price":"1685.37","symbol":"ETHUSDT","time":1781402011968}
+2026-06-14 07:23:36 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:23:36 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'SOLUSDT'}
+2026-06-14 07:23:36 | DEBUG    | client | Response 200: {"price":"68.8800","symbol":"SOLUSDT","time":1781402010337}
+2026-06-14 07:23:40 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:23:40 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'BTCUSDT'}
+2026-06-14 07:23:40 | DEBUG    | client | Response 200: {"price":"64587.70","symbol":"BTCUSDT","time":1781402015785}
+2026-06-14 07:23:40 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:23:40 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'ETHUSDT'}
+2026-06-14 07:23:41 | DEBUG    | client | Response 200: {"price":"1685.38","symbol":"ETHUSDT","time":1781402015983}
+2026-06-14 07:23:41 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:23:41 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'SOLUSDT'}
+2026-06-14 07:23:41 | DEBUG    | client | Response 200: {"price":"68.8800","symbol":"SOLUSDT","time":1781402016223}
+2026-06-14 07:23:45 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:23:45 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/openOrders | params={'symbol': 'BTCUSDT', 'timestamp': 1781402025048, 'signature': '90b4b6d4ed236dd291f0ded6e0772fbc8f6331afdf968e06433f3ee167317bce'}
+2026-06-14 07:23:45 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:23:45 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'BTCUSDT'}
+2026-06-14 07:23:45 | DEBUG    | client | Response 200: {"price":"64591.80","symbol":"BTCUSDT","time":1781402021724}
+2026-06-14 07:23:45 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:23:45 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'ETHUSDT'}
+2026-06-14 07:23:45 | DEBUG    | client | Response 200: []
+2026-06-14 07:23:46 | DEBUG    | client | Response 200: {"price":"1685.38","symbol":"ETHUSDT","time":1781402018696}
+2026-06-14 07:23:46 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:23:46 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'SOLUSDT'}
+2026-06-14 07:23:46 | DEBUG    | client | Response 200: {"price":"68.8800","symbol":"SOLUSDT","time":1781402020685}
+2026-06-14 07:23:50 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:23:50 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'BTCUSDT'}
+2026-06-14 07:23:50 | DEBUG    | client | Response 200: {"price":"64591.90","symbol":"BTCUSDT","time":1781402025474}
+2026-06-14 07:23:50 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:23:50 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'ETHUSDT'}
+2026-06-14 07:23:51 | DEBUG    | client | Response 200: {"price":"1685.38","symbol":"ETHUSDT","time":1781402025309}
+2026-06-14 07:23:51 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:23:51 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'SOLUSDT'}
+2026-06-14 07:23:51 | DEBUG    | client | Response 200: {"price":"68.8800","symbol":"SOLUSDT","time":1781402026709}
+2026-06-14 07:23:55 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:23:55 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'BTCUSDT'}
+2026-06-14 07:23:55 | DEBUG    | client | Response 200: {"price":"64590.90","symbol":"BTCUSDT","time":1781402030821}
+2026-06-14 07:23:55 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:23:55 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'ETHUSDT'}
+2026-06-14 07:23:56 | DEBUG    | client | Response 200: {"price":"1685.38","symbol":"ETHUSDT","time":1781402031852}
+2026-06-14 07:23:56 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:23:56 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'SOLUSDT'}
+2026-06-14 07:23:56 | DEBUG    | client | Response 200: {"price":"68.8800","symbol":"SOLUSDT","time":1781402028875}
+2026-06-14 07:24:00 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:24:00 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/klines | params={'symbol': 'BTCUSDT', 'interval': '15m', 'limit': 160}
+2026-06-14 07:24:00 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:24:00 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/klines | params={'symbol': 'BTCUSDT', 'interval': '15m', 'limit': 300}
+2026-06-14 07:24:00 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:24:00 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/openOrders | params={'symbol': 'BTCUSDT', 'timestamp': 1781402040055, 'signature': 'ca55e9970e2ddbf0298911689ced2025d0070959e9104cf8cd2477a704a7c231'}
+2026-06-14 07:24:00 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:24:00 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'BTCUSDT'}
+2026-06-14 07:24:00 | DEBUG    | client | Response 200: [[1781258400000,"63730.00","63807.60","63708.00","63741.20","15238.0636",1781259299999,"971498872.151290",7560,"6722.1041","428610602.755100","0"],[1781259300000,"63741.10","63807.50","63568.20","63572.60","20448.5982",1781260199999,"1302402160.272110",8631,"359.1771","22895457.178250","0"],[1781260200000,"63572.90","63678.40","63568.20","63641.30","17154.2564",1781261099999,"1091596867.704040",9131,"14134.6726","899403948.456110","0"],[1781261100000,"63641.20","63700.10","63640.10","63681.80","
+2026-06-14 07:24:00 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v2/account | params={'timestamp': 1781402040620, 'signature': 'db72d0d104ed042a390b8509d51701dd3ac3cc8d4b2b30b9f033b4a550c4228d'}
+2026-06-14 07:24:00 | DEBUG    | client | Response 200: {"price":"64591.00","symbol":"BTCUSDT","time":1781402035241}
+2026-06-14 07:24:00 | DEBUG    | client | Response 200: []
+2026-06-14 07:24:00 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:24:00 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'ETHUSDT'}
+2026-06-14 07:24:00 | DEBUG    | client | Response 200: {"feeTier":0,"canTrade":true,"canDeposit":true,"canWithdraw":true,"feeBurn":true,"tradeGroupId":-1,"updateTime":0,"multiAssetsMargin":false,"totalInitialMargin":"32.29595000","totalMaintMargin":"2.58367600","totalWalletBalance":"4999.06095022","totalUnrealizedProfit":"4.63725000","totalMarginBalance":"5003.69820022","totalPositionInitialMargin":"32.29595000","totalOpenOrderInitialMargin":"0.00000000","totalCrossWalletBalance":"4999.06095022","totalCrossUnPnl":"4.63725000","availableBalance":"497
+2026-06-14 07:24:00 | DEBUG    | client | Response 200: [[1781132400000,"61405.20","61405.60","61192.00","61192.00","24860.0138",1781133299999,"1523979420.304430",8124,"7183.5442","440490766.872860","0"],[1781133300000,"61192.00","61485.00","61192.00","61483.00","22259.8555",1781134199999,"1365516971.341960",6530,"21314.9060","1307511456.741670","0"],[1781134200000,"61482.90","61634.80","61447.20","61564.50","23100.1365",1781135099999,"1420792963.465660",6643,"12301.3473","756741086.617810","0"],[1781135100000,"61564.50","61565.20","61473.60","61526.
+2026-06-14 07:24:01 | DEBUG    | client | Response 200: {"price":"1685.38","symbol":"ETHUSDT","time":1781402035641}
+2026-06-14 07:24:01 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:24:01 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'SOLUSDT'}
+2026-06-14 07:24:02 | DEBUG    | client | Response 200: {"price":"68.8800","symbol":"SOLUSDT","time":1781402035579}
+2026-06-14 07:24:05 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:24:05 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'BTCUSDT'}
+2026-06-14 07:24:06 | DEBUG    | client | Response 200: {"price":"64591.00","symbol":"BTCUSDT","time":1781402041210}
+2026-06-14 07:24:06 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:24:06 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'ETHUSDT'}
+2026-06-14 07:24:06 | DEBUG    | client | Response 200: {"price":"1685.38","symbol":"ETHUSDT","time":1781402041789}
+2026-06-14 07:24:06 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:24:06 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'SOLUSDT'}
+2026-06-14 07:24:07 | DEBUG    | client | Response 200: {"price":"68.8700","symbol":"SOLUSDT","time":1781402046297}
+2026-06-14 07:24:10 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:24:10 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'BTCUSDT'}
+2026-06-14 07:24:10 | DEBUG    | client | Response 200: {"price":"64590.00","symbol":"BTCUSDT","time":1781402045513}
+2026-06-14 07:24:10 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:24:10 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'ETHUSDT'}
+2026-06-14 07:24:11 | DEBUG    | client | Response 200: {"price":"1685.38","symbol":"ETHUSDT","time":1781402045984}
+2026-06-14 07:24:11 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:24:11 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'SOLUSDT'}
+2026-06-14 07:24:12 | DEBUG    | client | Response 200: {"price":"68.8700","symbol":"SOLUSDT","time":1781402046297}
+2026-06-14 07:24:15 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:24:15 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/openOrders | params={'symbol': 'BTCUSDT', 'timestamp': 1781402055140, 'signature': '6ef4bc88925484c69722af13fa25c116d3fad0cdb6505c58d39646233b5bb1ad'}
+2026-06-14 07:24:16 | DEBUG    | client | Response 200: []
+2026-06-14 07:24:17 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:24:17 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'BTCUSDT'}
+2026-06-14 07:24:17 | DEBUG    | client | Response 200: {"price":"64588.00","symbol":"BTCUSDT","time":1781402051537}
+2026-06-14 07:24:17 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:24:17 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'ETHUSDT'}
+2026-06-14 07:24:19 | DEBUG    | client | Response 200: {"price":"1685.34","symbol":"ETHUSDT","time":1781402055532}
+2026-06-14 07:24:19 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:24:19 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'SOLUSDT'}
+2026-06-14 07:24:20 | DEBUG    | client | Response 200: {"price":"68.8700","symbol":"SOLUSDT","time":1781402056703}
+2026-06-14 07:24:25 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:24:25 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'BTCUSDT'}
+2026-06-14 07:24:26 | DEBUG    | client | Response 200: {"price":"64588.00","symbol":"BTCUSDT","time":1781402061763}
+2026-06-14 07:24:26 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:24:26 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'ETHUSDT'}
+2026-06-14 07:24:27 | DEBUG    | client | Response 200: {"price":"1685.34","symbol":"ETHUSDT","time":1781402059986}
+2026-06-14 07:24:27 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:24:27 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'SOLUSDT'}
+2026-06-14 07:24:28 | DEBUG    | client | Response 200: {"price":"68.8700","symbol":"SOLUSDT","time":1781402066409}
+2026-06-14 07:24:30 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:24:30 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/klines | params={'symbol': 'BTCUSDT', 'interval': '15m', 'limit': 160}
+2026-06-14 07:24:30 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:24:30 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/klines | params={'symbol': 'BTCUSDT', 'interval': '15m', 'limit': 300}
+2026-06-14 07:24:30 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:24:30 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/openOrders | params={'symbol': 'BTCUSDT', 'timestamp': 1781402070153, 'signature': 'f0c30efd1ae2fd4ecd0b7e24eecbde8ea3ffeadea616d76336048a588395e713'}
+2026-06-14 07:24:31 | DEBUG    | client | Response 200: [[1781258400000,"63730.00","63807.60","63708.00","63741.20","15238.0636",1781259299999,"971498872.151290",7560,"6722.1041","428610602.755100","0"],[1781259300000,"63741.10","63807.50","63568.20","63572.60","20448.5982",1781260199999,"1302402160.272110",8631,"359.1771","22895457.178250","0"],[1781260200000,"63572.90","63678.40","63568.20","63641.30","17154.2564",1781261099999,"1091596867.704040",9131,"14134.6726","899403948.456110","0"],[1781261100000,"63641.20","63700.10","63640.10","63681.80","
+2026-06-14 07:24:31 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v2/account | params={'timestamp': 1781402071791, 'signature': '0022e3b4754a1b4567ca36b0c4bb0021d8a67c9c543017594b0dce277e9d66aa'}
+2026-06-14 07:24:31 | DEBUG    | client | Response 200: []
+2026-06-14 07:24:32 | DEBUG    | client | Response 200: [[1781132400000,"61405.20","61405.60","61192.00","61192.00","24860.0138",1781133299999,"1523979420.304430",8124,"7183.5442","440490766.872860","0"],[1781133300000,"61192.00","61485.00","61192.00","61483.00","22259.8555",1781134199999,"1365516971.341960",6530,"21314.9060","1307511456.741670","0"],[1781134200000,"61482.90","61634.80","61447.20","61564.50","23100.1365",1781135099999,"1420792963.465660",6643,"12301.3473","756741086.617810","0"],[1781135100000,"61564.50","61565.20","61473.60","61526.
+2026-06-14 07:24:32 | DEBUG    | client | Response 200: {"feeTier":0,"canTrade":true,"canDeposit":true,"canWithdraw":true,"feeBurn":true,"tradeGroupId":-1,"updateTime":0,"multiAssetsMargin":false,"totalInitialMargin":"32.29238284","totalMaintMargin":"2.58339062","totalWalletBalance":"4999.06095022","totalUnrealizedProfit":"4.56590670","totalMarginBalance":"5003.62685692","totalPositionInitialMargin":"32.29238284","totalOpenOrderInitialMargin":"0.00000000","totalCrossWalletBalance":"4999.06095022","totalCrossUnPnl":"4.56590670","availableBalance":"497
+2026-06-14 07:24:42 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:24:42 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'BTCUSDT'}
+2026-06-14 07:24:43 | DEBUG    | client | Response 200: {"price":"64584.80","symbol":"BTCUSDT","time":1781402081825}
+2026-06-14 07:24:43 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:24:43 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'ETHUSDT'}
+2026-06-14 07:24:44 | DEBUG    | client | Response 200: {"price":"1684.86","symbol":"ETHUSDT","time":1781402081831}
+2026-06-14 07:24:44 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:24:44 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'SOLUSDT'}
+2026-06-14 07:24:45 | DEBUG    | client | Response 200: {"price":"68.8500","symbol":"SOLUSDT","time":1781402082656}
+2026-06-14 07:24:59 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:24:59 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/openOrders | params={'symbol': 'BTCUSDT', 'timestamp': 1781402099566, 'signature': '23f89f7a1f00289e68588d8196a89424aeea50ac22d2e983de30afaeffae3bbb'}
+2026-06-14 07:24:59 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:24:59 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'BTCUSDT'}
+2026-06-14 07:25:00 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:25:00 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/klines | params={'symbol': 'BTCUSDT', 'interval': '15m', 'limit': 160}
+2026-06-14 07:25:00 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:25:00 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/klines | params={'symbol': 'BTCUSDT', 'interval': '15m', 'limit': 300}
+2026-06-14 07:25:00 | DEBUG    | client | Response 200: {"price":"64584.30","symbol":"BTCUSDT","time":1781402097053}
+2026-06-14 07:25:00 | DEBUG    | client | Response 200: []
+2026-06-14 07:25:00 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:25:00 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'ETHUSDT'}
+2026-06-14 07:25:01 | DEBUG    | client | Response 200: [[1781258400000,"63730.00","63807.60","63708.00","63741.20","15238.0636",1781259299999,"971498872.151290",7560,"6722.1041","428610602.755100","0"],[1781259300000,"63741.10","63807.50","63568.20","63572.60","20448.5982",1781260199999,"1302402160.272110",8631,"359.1771","22895457.178250","0"],[1781260200000,"63572.90","63678.40","63568.20","63641.30","17154.2564",1781261099999,"1091596867.704040",9131,"14134.6726","899403948.456110","0"],[1781261100000,"63641.20","63700.10","63640.10","63681.80","
+2026-06-14 07:25:01 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v2/account | params={'timestamp': 1781402101704, 'signature': '017703862ea27b97ed52a749e37858cfa86908960761cc578d50c440d4d0fb65'}
+2026-06-14 07:25:02 | DEBUG    | client | Response 200: [[1781132400000,"61405.20","61405.60","61192.00","61192.00","24860.0138",1781133299999,"1523979420.304430",8124,"7183.5442","440490766.872860","0"],[1781133300000,"61192.00","61485.00","61192.00","61483.00","22259.8555",1781134199999,"1365516971.341960",6530,"21314.9060","1307511456.741670","0"],[1781134200000,"61482.90","61634.80","61447.20","61564.50","23100.1365",1781135099999,"1420792963.465660",6643,"12301.3473","756741086.617810","0"],[1781135100000,"61564.50","61565.20","61473.60","61526.
+2026-06-14 07:25:02 | DEBUG    | client | Response 200: {"feeTier":0,"canTrade":true,"canDeposit":true,"canWithdraw":true,"feeBurn":true,"tradeGroupId":-1,"updateTime":0,"multiAssetsMargin":false,"totalInitialMargin":"32.29510000","totalMaintMargin":"2.58360800","totalWalletBalance":"4999.06095022","totalUnrealizedProfit":"4.62025000","totalMarginBalance":"5003.68120022","totalPositionInitialMargin":"32.29510000","totalOpenOrderInitialMargin":"0.00000000","totalCrossWalletBalance":"4999.06095022","totalCrossUnPnl":"4.62025000","availableBalance":"497
+2026-06-14 07:25:02 | DEBUG    | client | Response 200: {"price":"1684.86","symbol":"ETHUSDT","time":1781402095695}
+2026-06-14 07:25:02 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:25:02 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'SOLUSDT'}
+2026-06-14 07:25:04 | DEBUG    | client | Response 200: {"price":"68.8300","symbol":"SOLUSDT","time":1781402102526}
+2026-06-14 07:25:13 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:25:13 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'BTCUSDT'}
+2026-06-14 07:25:14 | DEBUG    | client | Response 200: {"price":"64587.30","symbol":"BTCUSDT","time":1781402110323}
+2026-06-14 07:25:14 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:25:14 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'ETHUSDT'}
+2026-06-14 07:25:15 | DEBUG    | client | Response 200: {"price":"1684.86","symbol":"ETHUSDT","time":1781402111783}
+2026-06-14 07:25:15 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:25:15 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'SOLUSDT'}
+2026-06-14 07:25:16 | DEBUG    | client | Response 200: {"price":"68.8300","symbol":"SOLUSDT","time":1781402110365}
+2026-06-14 07:25:30 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:25:30 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/klines | params={'symbol': 'BTCUSDT', 'interval': '15m', 'limit': 160}
+2026-06-14 07:25:30 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:25:30 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/klines | params={'symbol': 'BTCUSDT', 'interval': '15m', 'limit': 300}
+2026-06-14 07:25:30 | DEBUG    | client | Response 200: [[1781258400000,"63730.00","63807.60","63708.00","63741.20","15238.0636",1781259299999,"971498872.151290",7560,"6722.1041","428610602.755100","0"],[1781259300000,"63741.10","63807.50","63568.20","63572.60","20448.5982",1781260199999,"1302402160.272110",8631,"359.1771","22895457.178250","0"],[1781260200000,"63572.90","63678.40","63568.20","63641.30","17154.2564",1781261099999,"1091596867.704040",9131,"14134.6726","899403948.456110","0"],[1781261100000,"63641.20","63700.10","63640.10","63681.80","
+2026-06-14 07:25:30 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v2/account | params={'timestamp': 1781402130900, 'signature': '276f15f98be2e19fa9b5d30fffdfa5c3ab4b1625ba03ebaed8f30a09fd65c6ef'}
+2026-06-14 07:25:31 | DEBUG    | client | Response 200: [[1781132400000,"61405.20","61405.60","61192.00","61192.00","24860.0138",1781133299999,"1523979420.304430",8124,"7183.5442","440490766.872860","0"],[1781133300000,"61192.00","61485.00","61192.00","61483.00","22259.8555",1781134199999,"1365516971.341960",6530,"21314.9060","1307511456.741670","0"],[1781134200000,"61482.90","61634.80","61447.20","61564.50","23100.1365",1781135099999,"1420792963.465660",6643,"12301.3473","756741086.617810","0"],[1781135100000,"61564.50","61565.20","61473.60","61526.
+2026-06-14 07:25:31 | DEBUG    | client | Response 200: {"feeTier":0,"canTrade":true,"canDeposit":true,"canWithdraw":true,"feeBurn":true,"tradeGroupId":-1,"updateTime":0,"multiAssetsMargin":false,"totalInitialMargin":"32.29416783","totalMaintMargin":"2.58353342","totalWalletBalance":"4999.06095022","totalUnrealizedProfit":"4.60160652","totalMarginBalance":"5003.66255674","totalPositionInitialMargin":"32.29416783","totalOpenOrderInitialMargin":"0.00000000","totalCrossWalletBalance":"4999.06095022","totalCrossUnPnl":"4.60160652","availableBalance":"497
+2026-06-14 07:25:33 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:25:33 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:25:33 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/openOrders | params={'symbol': 'BTCUSDT', 'timestamp': 1781402133451, 'signature': '5bc7f8cd699c4fe4f607a929577dd46c62c32262f4eab4b1e4821e83df46e5c3'}
+2026-06-14 07:25:33 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'BTCUSDT'}
+2026-06-14 07:25:34 | DEBUG    | client | Response 200: {"price":"64587.20","symbol":"BTCUSDT","time":1781402130966}
+2026-06-14 07:25:34 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:25:34 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'ETHUSDT'}
+2026-06-14 07:25:34 | DEBUG    | client | Response 200: []
+2026-06-14 07:25:35 | DEBUG    | client | Response 200: {"price":"1684.86","symbol":"ETHUSDT","time":1781402129798}
+2026-06-14 07:25:35 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:25:35 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'SOLUSDT'}
+2026-06-14 07:25:36 | DEBUG    | client | Response 200: {"price":"68.8400","symbol":"SOLUSDT","time":1781402131984}
+2026-06-14 07:25:53 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:25:53 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/openOrders | params={'symbol': 'BTCUSDT', 'timestamp': 1781402153452, 'signature': '638f20052901666351d4ff07bea92c89b0f2d28b524a95b37f2f057903ab5129'}
+2026-06-14 07:25:53 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:25:53 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'BTCUSDT'}
+2026-06-14 07:25:54 | DEBUG    | client | Response 200: []
+2026-06-14 07:25:54 | DEBUG    | client | Response 200: {"price":"64584.60","symbol":"BTCUSDT","time":1781402151865}
+2026-06-14 07:25:54 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:25:54 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'ETHUSDT'}
+2026-06-14 07:25:55 | DEBUG    | client | Response 200: {"price":"1684.36","symbol":"ETHUSDT","time":1781402150053}
+2026-06-14 07:25:55 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:25:55 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'SOLUSDT'}
+2026-06-14 07:25:56 | DEBUG    | client | Response 200: {"price":"68.8300","symbol":"SOLUSDT","time":1781402150692}
+2026-06-14 07:26:00 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:26:00 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/klines | params={'symbol': 'BTCUSDT', 'interval': '15m', 'limit': 160}
+2026-06-14 07:26:00 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:26:00 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/klines | params={'symbol': 'BTCUSDT', 'interval': '15m', 'limit': 300}
+2026-06-14 07:26:02 | DEBUG    | client | Response 200: [[1781258400000,"63730.00","63807.60","63708.00","63741.20","15238.0636",1781259299999,"971498872.151290",7560,"6722.1041","428610602.755100","0"],[1781259300000,"63741.10","63807.50","63568.20","63572.60","20448.5982",1781260199999,"1302402160.272110",8631,"359.1771","22895457.178250","0"],[1781260200000,"63572.90","63678.40","63568.20","63641.30","17154.2564",1781261099999,"1091596867.704040",9131,"14134.6726","899403948.456110","0"],[1781261100000,"63641.20","63700.10","63640.10","63681.80","
+2026-06-14 07:26:02 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v2/account | params={'timestamp': 1781402162056, 'signature': 'fd640d13618f7d0f6c659f47b75d3348dffd84e015906469516f284425ca7111'}
+2026-06-14 07:26:02 | DEBUG    | client | Response 200: [[1781132400000,"61405.20","61405.60","61192.00","61192.00","24860.0138",1781133299999,"1523979420.304430",8124,"7183.5442","440490766.872860","0"],[1781133300000,"61192.00","61485.00","61192.00","61483.00","22259.8555",1781134199999,"1365516971.341960",6530,"21314.9060","1307511456.741670","0"],[1781134200000,"61482.90","61634.80","61447.20","61564.50","23100.1365",1781135099999,"1420792963.465660",6643,"12301.3473","756741086.617810","0"],[1781135100000,"61564.50","61565.20","61473.60","61526.
+2026-06-14 07:26:02 | DEBUG    | client | Response 200: {"feeTier":0,"canTrade":true,"canDeposit":true,"canWithdraw":true,"feeBurn":true,"tradeGroupId":-1,"updateTime":0,"multiAssetsMargin":false,"totalInitialMargin":"32.29152523","totalMaintMargin":"2.58332201","totalWalletBalance":"4999.06095022","totalUnrealizedProfit":"4.54875452","totalMarginBalance":"5003.60970474","totalPositionInitialMargin":"32.29152523","totalOpenOrderInitialMargin":"0.00000000","totalCrossWalletBalance":"4999.06095022","totalCrossUnPnl":"4.54875452","availableBalance":"497
+2026-06-14 07:26:13 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:26:13 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/openOrders | params={'symbol': 'BTCUSDT', 'timestamp': 1781402173452, 'signature': '8ad1a7ccc8253ac446f996e504c578d86f8cd5d1d7b9c8125c17e1cae3944693'}
+2026-06-14 07:26:13 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:26:13 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'BTCUSDT'}
+2026-06-14 07:26:14 | DEBUG    | client | Response 200: {"price":"64584.30","symbol":"BTCUSDT","time":1781402171369}
+2026-06-14 07:26:14 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:26:14 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'ETHUSDT'}
+2026-06-14 07:26:14 | DEBUG    | client | Response 200: []
+2026-06-14 07:26:15 | DEBUG    | client | Response 200: {"price":"1684.23","symbol":"ETHUSDT","time":1781402169897}
+2026-06-14 07:26:15 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:26:15 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'SOLUSDT'}
+2026-06-14 07:26:17 | DEBUG    | client | Response 200: {"price":"68.8300","symbol":"SOLUSDT","time":1781402170383}
+2026-06-14 07:26:33 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:26:33 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/klines | params={'symbol': 'BTCUSDT', 'interval': '15m', 'limit': 160}
+2026-06-14 07:26:33 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:26:33 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/klines | params={'symbol': 'BTCUSDT', 'interval': '15m', 'limit': 300}
+2026-06-14 07:26:33 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:26:33 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:26:33 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/openOrders | params={'symbol': 'BTCUSDT', 'timestamp': 1781402193460, 'signature': 'c2919b0cd12086deaa7a0a94354fdd32336fe753c967569cb88458f4cab6ef62'}
+2026-06-14 07:26:33 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'BTCUSDT'}
+2026-06-14 07:26:35 | DEBUG    | client | Response 200: []
+2026-06-14 07:26:35 | DEBUG    | client | Response 200: {"price":"64582.30","symbol":"BTCUSDT","time":1781402191406}
+2026-06-14 07:26:35 | DEBUG    | client | Response 200: [[1781258400000,"63730.00","63807.60","63708.00","63741.20","15238.0636",1781259299999,"971498872.151290",7560,"6722.1041","428610602.755100","0"],[1781259300000,"63741.10","63807.50","63568.20","63572.60","20448.5982",1781260199999,"1302402160.272110",8631,"359.1771","22895457.178250","0"],[1781260200000,"63572.90","63678.40","63568.20","63641.30","17154.2564",1781261099999,"1091596867.704040",9131,"14134.6726","899403948.456110","0"],[1781261100000,"63641.20","63700.10","63640.10","63681.80","
+2026-06-14 07:26:35 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v2/account | params={'timestamp': 1781402195248, 'signature': '7819dae54dbce9cbf66ce7919ef0a4b7f449f91d1e87307dd63796478afa73c0'}
+2026-06-14 07:26:35 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:26:35 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'ETHUSDT'}
+2026-06-14 07:26:35 | DEBUG    | client | Response 200: [[1781132400000,"61405.20","61405.60","61192.00","61192.00","24860.0138",1781133299999,"1523979420.304430",8124,"7183.5442","440490766.872860","0"],[1781133300000,"61192.00","61485.00","61192.00","61483.00","22259.8555",1781134199999,"1365516971.341960",6530,"21314.9060","1307511456.741670","0"],[1781134200000,"61482.90","61634.80","61447.20","61564.50","23100.1365",1781135099999,"1420792963.465660",6643,"12301.3473","756741086.617810","0"],[1781135100000,"61564.50","61565.20","61473.60","61526.
+2026-06-14 07:26:36 | DEBUG    | client | Response 200: {"feeTier":0,"canTrade":true,"canDeposit":true,"canWithdraw":true,"feeBurn":true,"tradeGroupId":-1,"updateTime":0,"multiAssetsMargin":false,"totalInitialMargin":"32.28198595","totalMaintMargin":"2.58255887","totalWalletBalance":"4999.06095022","totalUnrealizedProfit":"4.35796884","totalMarginBalance":"5003.41891906","totalPositionInitialMargin":"32.28198595","totalOpenOrderInitialMargin":"0.00000000","totalCrossWalletBalance":"4999.06095022","totalCrossUnPnl":"4.35796884","availableBalance":"497
+2026-06-14 07:26:37 | DEBUG    | client | Response 200: {"price":"1683.78","symbol":"ETHUSDT","time":1781402192058}
+2026-06-14 07:26:37 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:26:37 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'SOLUSDT'}
+2026-06-14 07:26:38 | DEBUG    | client | Response 200: {"price":"68.8100","symbol":"SOLUSDT","time":1781402196086}
+2026-06-14 07:26:53 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:26:53 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/openOrders | params={'symbol': 'BTCUSDT', 'timestamp': 1781402213452, 'signature': '23c264604cf8d7ec4054fe17e86dd8dfd8c0cb361ef35a6b10f46d4a148ca63f'}
+2026-06-14 07:26:53 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:26:53 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'BTCUSDT'}
+2026-06-14 07:26:54 | DEBUG    | client | Response 200: {"price":"64587.40","symbol":"BTCUSDT","time":1781402211756}
+2026-06-14 07:26:54 | DEBUG    | client | Response 200: []
+2026-06-14 07:26:54 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:26:54 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'ETHUSDT'}
+2026-06-14 07:26:55 | DEBUG    | client | Response 200: {"price":"1683.77","symbol":"ETHUSDT","time":1781402209987}
+2026-06-14 07:26:55 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:26:55 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'SOLUSDT'}
+2026-06-14 07:26:57 | DEBUG    | client | Response 200: {"price":"68.8100","symbol":"SOLUSDT","time":1781402210668}
+2026-06-14 07:27:13 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:27:13 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/klines | params={'symbol': 'BTCUSDT', 'interval': '15m', 'limit': 160}
+2026-06-14 07:27:13 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:27:13 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/klines | params={'symbol': 'BTCUSDT', 'interval': '15m', 'limit': 300}
+2026-06-14 07:27:13 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:27:13 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:27:13 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/openOrders | params={'symbol': 'BTCUSDT', 'timestamp': 1781402233462, 'signature': '9eb6c69591cb9149e970dfc8e8bc1d20b828502e0d01fcaac24ebcc8d3ce41ca'}
+2026-06-14 07:27:13 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'BTCUSDT'}
+2026-06-14 07:27:14 | DEBUG    | client | Response 200: []
+2026-06-14 07:27:14 | DEBUG    | client | Response 200: {"price":"64565.70","symbol":"BTCUSDT","time":1781402231243}
+2026-06-14 07:27:14 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:27:14 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'ETHUSDT'}
+2026-06-14 07:27:14 | DEBUG    | client | Response 200: [[1781258400000,"63730.00","63807.60","63708.00","63741.20","15238.0636",1781259299999,"971498872.151290",7560,"6722.1041","428610602.755100","0"],[1781259300000,"63741.10","63807.50","63568.20","63572.60","20448.5982",1781260199999,"1302402160.272110",8631,"359.1771","22895457.178250","0"],[1781260200000,"63572.90","63678.40","63568.20","63641.30","17154.2564",1781261099999,"1091596867.704040",9131,"14134.6726","899403948.456110","0"],[1781261100000,"63641.20","63700.10","63640.10","63681.80","
+2026-06-14 07:27:14 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v2/account | params={'timestamp': 1781402234523, 'signature': 'b5f2a1b11dd34e353cfbb42f4a1e0a1611b8973a0c8c4c520fbbde83837b23dd'}
+2026-06-14 07:27:14 | DEBUG    | client | Response 200: [[1781132400000,"61405.20","61405.60","61192.00","61192.00","24860.0138",1781133299999,"1523979420.304430",8124,"7183.5442","440490766.872860","0"],[1781133300000,"61192.00","61485.00","61192.00","61483.00","22259.8555",1781134199999,"1365516971.341960",6530,"21314.9060","1307511456.741670","0"],[1781134200000,"61482.90","61634.80","61447.20","61564.50","23100.1365",1781135099999,"1420792963.465660",6643,"12301.3473","756741086.617810","0"],[1781135100000,"61564.50","61565.20","61473.60","61526.
+2026-06-14 07:27:14 | DEBUG    | client | Response 200: {"feeTier":0,"canTrade":true,"canDeposit":true,"canWithdraw":true,"feeBurn":true,"tradeGroupId":-1,"updateTime":0,"multiAssetsMargin":false,"totalInitialMargin":"32.27990000","totalMaintMargin":"2.58239200","totalWalletBalance":"4999.06095022","totalUnrealizedProfit":"4.31625000","totalMarginBalance":"5003.37720022","totalPositionInitialMargin":"32.27990000","totalOpenOrderInitialMargin":"0.00000000","totalCrossWalletBalance":"4999.06095022","totalCrossUnPnl":"4.31625000","availableBalance":"497
+2026-06-14 07:27:15 | DEBUG    | client | Response 200: {"price":"1683.74","symbol":"ETHUSDT","time":1781402231433}
+2026-06-14 07:27:15 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:27:15 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'SOLUSDT'}
+2026-06-14 07:27:16 | DEBUG    | client | Response 200: {"price":"68.8000","symbol":"SOLUSDT","time":1781402230534}
+2026-06-14 07:27:33 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:27:33 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/openOrders | params={'symbol': 'BTCUSDT', 'timestamp': 1781402253453, 'signature': 'b55bc17502b7e3f65e88b863b9f9e8d22d3c60b8ca263af1f17dcb32899ef8c1'}
+2026-06-14 07:27:33 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:27:33 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'BTCUSDT'}
+2026-06-14 07:27:34 | DEBUG    | client | Response 200: {"price":"64560.30","symbol":"BTCUSDT","time":1781402251255}
+2026-06-14 07:27:34 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:27:34 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'ETHUSDT'}
+2026-06-14 07:27:34 | DEBUG    | client | Response 200: []
+2026-06-14 07:27:35 | DEBUG    | client | Response 200: {"price":"1683.46","symbol":"ETHUSDT","time":1781402251970}
+2026-06-14 07:27:35 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:27:35 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'SOLUSDT'}
+2026-06-14 07:27:37 | DEBUG    | client | Response 200: {"price":"68.7800","symbol":"SOLUSDT","time":1781402252715}
+2026-06-14 07:27:38 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:27:38 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'BTCUSDT'}
+2026-06-14 07:27:39 | DEBUG    | client | Response 200: {"price":"64559.10","symbol":"BTCUSDT","time":1781402255788}
+2026-06-14 07:27:39 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:27:39 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'ETHUSDT'}
+2026-06-14 07:27:40 | DEBUG    | client | Response 200: {"price":"1683.33","symbol":"ETHUSDT","time":1781402255988}
+2026-06-14 07:27:40 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:27:40 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'SOLUSDT'}
+2026-06-14 07:27:42 | DEBUG    | client | Response 200: {"price":"68.7600","symbol":"SOLUSDT","time":1781402260654}
+2026-06-14 07:27:43 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:27:43 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/klines | params={'symbol': 'BTCUSDT', 'interval': '15m', 'limit': 160}
+2026-06-14 07:27:43 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:27:43 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/klines | params={'symbol': 'BTCUSDT', 'interval': '15m', 'limit': 300}
+2026-06-14 07:27:43 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:27:43 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'BTCUSDT'}
+2026-06-14 07:27:45 | DEBUG    | client | Response 200: [[1781258400000,"63730.00","63807.60","63708.00","63741.20","15238.0636",1781259299999,"971498872.151290",7560,"6722.1041","428610602.755100","0"],[1781259300000,"63741.10","63807.50","63568.20","63572.60","20448.5982",1781260199999,"1302402160.272110",8631,"359.1771","22895457.178250","0"],[1781260200000,"63572.90","63678.40","63568.20","63641.30","17154.2564",1781261099999,"1091596867.704040",9131,"14134.6726","899403948.456110","0"],[1781261100000,"63641.20","63700.10","63640.10","63681.80","
+2026-06-14 07:27:45 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v2/account | params={'timestamp': 1781402265574, 'signature': '977b1689dcd5fb633cd440838ba2a761823db3ecf5c2704cee492547a0ef793e'}
+2026-06-14 07:27:45 | DEBUG    | client | Response 200: {"price":"64559.20","symbol":"BTCUSDT","time":1781402259584}
+2026-06-14 07:27:45 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:27:45 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'ETHUSDT'}
+2026-06-14 07:27:46 | DEBUG    | client | Response 200: [[1781132400000,"61405.20","61405.60","61192.00","61192.00","24860.0138",1781133299999,"1523979420.304430",8124,"7183.5442","440490766.872860","0"],[1781133300000,"61192.00","61485.00","61192.00","61483.00","22259.8555",1781134199999,"1365516971.341960",6530,"21314.9060","1307511456.741670","0"],[1781134200000,"61482.90","61634.80","61447.20","61564.50","23100.1365",1781135099999,"1420792963.465660",6643,"12301.3473","756741086.617810","0"],[1781135100000,"61564.50","61565.20","61473.60","61526.
+2026-06-14 07:27:46 | DEBUG    | client | Response 200: {"feeTier":0,"canTrade":true,"canDeposit":true,"canWithdraw":true,"feeBurn":true,"tradeGroupId":-1,"updateTime":0,"multiAssetsMargin":false,"totalInitialMargin":"32.27360000","totalMaintMargin":"2.58188800","totalWalletBalance":"4999.06095022","totalUnrealizedProfit":"4.19025000","totalMarginBalance":"5003.25120022","totalPositionInitialMargin":"32.27360000","totalOpenOrderInitialMargin":"0.00000000","totalCrossWalletBalance":"4999.06095022","totalCrossUnPnl":"4.19025000","availableBalance":"497
+2026-06-14 07:27:48 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:27:48 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/openOrders | params={'symbol': 'BTCUSDT', 'timestamp': 1781402268541, 'signature': '7fd76d4cfa44d6690c3c1817663959975ae3d2df8437fd47dda75c330b3f957d'}
+2026-06-14 07:27:49 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:27:49 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'BTCUSDT'}
+2026-06-14 07:27:51 | DEBUG    | client | Response 200: {"price":"1683.04","symbol":"ETHUSDT","time":1781402266082}
+2026-06-14 07:27:51 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:27:51 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'SOLUSDT'}
+2026-06-14 07:27:52 | DEBUG    | client | Response 200: {"price":"64560.00","symbol":"BTCUSDT","time":1781402265913}
+2026-06-14 07:27:52 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:27:52 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'ETHUSDT'}
+2026-06-14 07:27:54 | DEBUG    | client | Response 200: {"price":"68.7600","symbol":"SOLUSDT","time":1781402272340}
+2026-06-14 07:27:55 | DEBUG    | client | Response 200: {"price":"1683.03","symbol":"ETHUSDT","time":1781402270117}
+2026-06-14 07:27:55 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:27:55 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'SOLUSDT'}
+2026-06-14 07:27:55 | DEBUG    | client | Response 400: {"code":-1021,"msg":"Timestamp for this request is outside of the recvWindow."}
+2026-06-14 07:27:55 | ERROR    | client | API error -1021: Timestamp for this request is outside of the recvWindow.
+2026-06-14 07:27:58 | DEBUG    | client | Response 200: {"price":"68.7900","symbol":"SOLUSDT","time":1781402276574}
+2026-06-14 07:28:02 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:28:02 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'BTCUSDT'}
+2026-06-14 07:28:03 | DEBUG    | client | Response 200: {"price":"64550.00","symbol":"BTCUSDT","time":1781402281564}
+2026-06-14 07:28:03 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:28:03 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'ETHUSDT'}
+2026-06-14 07:28:04 | DEBUG    | client | Response 200: {"price":"1683.09","symbol":"ETHUSDT","time":1781402279919}
+2026-06-14 07:28:04 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:28:04 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'SOLUSDT'}
+2026-06-14 07:28:05 | DEBUG    | client | Response 200: {"price":"68.7600","symbol":"SOLUSDT","time":1781402280632}
+2026-06-14 07:28:10 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:28:10 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'BTCUSDT'}
+2026-06-14 07:28:10 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:28:10 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/openOrders | params={'symbol': 'BTCUSDT', 'timestamp': 1781402290681, 'signature': '0351439cbb00612869df9e0b9332ded0ca2c66a03c2591b2608d84f9b3bfc172'}
+2026-06-14 07:28:11 | DEBUG    | client | Response 200: {"price":"64550.00","symbol":"BTCUSDT","time":1781402285357}
+2026-06-14 07:28:11 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:28:11 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'ETHUSDT'}
+2026-06-14 07:28:11 | DEBUG    | client | Response 200: []
+2026-06-14 07:28:12 | DEBUG    | client | Response 200: {"price":"1683.09","symbol":"ETHUSDT","time":1781402285351}
+2026-06-14 07:28:12 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:28:12 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'SOLUSDT'}
+2026-06-14 07:28:13 | DEBUG    | client | Response 200: {"price":"68.7700","symbol":"SOLUSDT","time":1781402289478}
+2026-06-14 07:28:14 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:28:14 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/klines | params={'symbol': 'BTCUSDT', 'interval': '15m', 'limit': 160}
+2026-06-14 07:28:14 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:28:14 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/klines | params={'symbol': 'BTCUSDT', 'interval': '15m', 'limit': 300}
+2026-06-14 07:28:16 | DEBUG    | client | Response 200: [[1781258400000,"63730.00","63807.60","63708.00","63741.20","15238.0636",1781259299999,"971498872.151290",7560,"6722.1041","428610602.755100","0"],[1781259300000,"63741.10","63807.50","63568.20","63572.60","20448.5982",1781260199999,"1302402160.272110",8631,"359.1771","22895457.178250","0"],[1781260200000,"63572.90","63678.40","63568.20","63641.30","17154.2564",1781261099999,"1091596867.704040",9131,"14134.6726","899403948.456110","0"],[1781261100000,"63641.20","63700.10","63640.10","63681.80","
+2026-06-14 07:28:16 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v2/account | params={'timestamp': 1781402296014, 'signature': '0c27d6edb66bc71217c544b0e04fcc77eb04f5d0f3feaba5da5f25324682caed'}
+2026-06-14 07:28:16 | DEBUG    | client | Response 200: [[1781132400000,"61405.20","61405.60","61192.00","61192.00","24860.0138",1781133299999,"1523979420.304430",8124,"7183.5442","440490766.872860","0"],[1781133300000,"61192.00","61485.00","61192.00","61483.00","22259.8555",1781134199999,"1365516971.341960",6530,"21314.9060","1307511456.741670","0"],[1781134200000,"61482.90","61634.80","61447.20","61564.50","23100.1365",1781135099999,"1420792963.465660",6643,"12301.3473","756741086.617810","0"],[1781135100000,"61564.50","61565.20","61473.60","61526.
+2026-06-14 07:28:16 | DEBUG    | client | Response 200: {"feeTier":0,"canTrade":true,"canDeposit":true,"canWithdraw":true,"feeBurn":true,"tradeGroupId":-1,"updateTime":0,"multiAssetsMargin":false,"totalInitialMargin":"32.27495000","totalMaintMargin":"2.58199600","totalWalletBalance":"4999.06095022","totalUnrealizedProfit":"4.21725000","totalMarginBalance":"5003.27820022","totalPositionInitialMargin":"32.27495000","totalOpenOrderInitialMargin":"0.00000000","totalCrossWalletBalance":"4999.06095022","totalCrossUnPnl":"4.21725000","availableBalance":"497
+2026-06-14 07:28:27 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:28:27 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'BTCUSDT'}
+2026-06-14 07:28:27 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:28:27 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/openOrders | params={'symbol': 'BTCUSDT', 'timestamp': 1781402307242, 'signature': '38ee4e588d91ee73316e1b34c8c46c28504a62cb00c74fd332637eb8d26de957'}
+2026-06-14 07:28:27 | DEBUG    | client | Response 200: {"price":"64549.90","symbol":"BTCUSDT","time":1781402301497}
+2026-06-14 07:28:27 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:28:27 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'ETHUSDT'}
+2026-06-14 07:28:27 | DEBUG    | client | Response 200: []
+2026-06-14 07:28:28 | DEBUG    | client | Response 200: {"price":"1682.93","symbol":"ETHUSDT","time":1781402306139}
+2026-06-14 07:28:28 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:28:28 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'SOLUSDT'}
+2026-06-14 07:28:29 | DEBUG    | client | Response 200: {"price":"68.7600","symbol":"SOLUSDT","time":1781402306203}
+2026-06-14 07:28:36 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:28:36 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'BTCUSDT'}
+2026-06-14 07:28:36 | DEBUG    | client | Response 200: {"price":"64549.90","symbol":"BTCUSDT","time":1781402311939}
+2026-06-14 07:28:36 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:28:36 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'ETHUSDT'}
+2026-06-14 07:28:37 | DEBUG    | client | Response 200: {"price":"1682.93","symbol":"ETHUSDT","time":1781402315669}
+2026-06-14 07:28:37 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:28:37 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'SOLUSDT'}
+2026-06-14 07:28:38 | DEBUG    | client | Response 200: {"price":"68.7600","symbol":"SOLUSDT","time":1781402314905}
+2026-06-14 07:29:10 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:29:10 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:29:10 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/klines | params={'symbol': 'BTCUSDT', 'interval': '15m', 'limit': 160}
+2026-06-14 07:29:10 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/klines | params={'symbol': 'BTCUSDT', 'interval': '15m', 'limit': 300}
+2026-06-14 07:29:10 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:29:10 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:29:10 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/openOrders | params={'symbol': 'BTCUSDT', 'timestamp': 1781402350526, 'signature': '7eb0fe97454a2018bf6323fea1e208e919e48c830a24972149892f24d45272f3'}
+2026-06-14 07:29:10 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'BTCUSDT'}
+2026-06-14 07:29:11 | DEBUG    | client | Response 200: {"price":"64548.40","symbol":"BTCUSDT","time":1781402345294}
+2026-06-14 07:29:11 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:29:11 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'ETHUSDT'}
+2026-06-14 07:29:11 | DEBUG    | client | Response 200: [[1781258400000,"63730.00","63807.60","63708.00","63741.20","15238.0636",1781259299999,"971498872.151290",7560,"6722.1041","428610602.755100","0"],[1781259300000,"63741.10","63807.50","63568.20","63572.60","20448.5982",1781260199999,"1302402160.272110",8631,"359.1771","22895457.178250","0"],[1781260200000,"63572.90","63678.40","63568.20","63641.30","17154.2564",1781261099999,"1091596867.704040",9131,"14134.6726","899403948.456110","0"],[1781261100000,"63641.20","63700.10","63640.10","63681.80","
+2026-06-14 07:29:11 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v2/account | params={'timestamp': 1781402351199, 'signature': 'f95e039c15bdd12e209f1599b44e61a14858308be6c3de0fdaca57650a21c78c'}
+2026-06-14 07:29:11 | DEBUG    | client | Response 200: []
+2026-06-14 07:29:11 | DEBUG    | client | Response 200: [[1781132400000,"61405.20","61405.60","61192.00","61192.00","24860.0138",1781133299999,"1523979420.304430",8124,"7183.5442","440490766.872860","0"],[1781133300000,"61192.00","61485.00","61192.00","61483.00","22259.8555",1781134199999,"1365516971.341960",6530,"21314.9060","1307511456.741670","0"],[1781134200000,"61482.90","61634.80","61447.20","61564.50","23100.1365",1781135099999,"1420792963.465660",6643,"12301.3473","756741086.617810","0"],[1781135100000,"61564.50","61565.20","61473.60","61526.
+2026-06-14 07:29:11 | DEBUG    | client | Response 200: {"feeTier":0,"canTrade":true,"canDeposit":true,"canWithdraw":true,"feeBurn":true,"tradeGroupId":-1,"updateTime":0,"multiAssetsMargin":false,"totalInitialMargin":"32.27840000","totalMaintMargin":"2.58227200","totalWalletBalance":"4999.06095022","totalUnrealizedProfit":"4.28625000","totalMarginBalance":"5003.34720022","totalPositionInitialMargin":"32.27840000","totalOpenOrderInitialMargin":"0.00000000","totalCrossWalletBalance":"4999.06095022","totalCrossUnPnl":"4.28625000","availableBalance":"497
+2026-06-14 07:29:11 | DEBUG    | client | Response 200: {"price":"1682.90","symbol":"ETHUSDT","time":1781402345314}
+2026-06-14 07:29:11 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:29:11 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'SOLUSDT'}
+2026-06-14 07:29:12 | DEBUG    | client | Response 200: {"price":"68.7900","symbol":"SOLUSDT","time":1781402350693}
+2026-06-14 07:29:21 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:29:21 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'BTCUSDT'}
+2026-06-14 07:29:22 | DEBUG    | client | Response 200: {"price":"64548.50","symbol":"BTCUSDT","time":1781402357284}
+2026-06-14 07:29:22 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:29:22 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'ETHUSDT'}
+2026-06-14 07:29:23 | DEBUG    | client | Response 200: {"price":"1683.01","symbol":"ETHUSDT","time":1781402361423}
+2026-06-14 07:29:23 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:29:23 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'SOLUSDT'}
+2026-06-14 07:29:23 | DEBUG    | client | Response 200: {"price":"68.8000","symbol":"SOLUSDT","time":1781402360674}
+2026-06-14 07:30:01 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:30:01 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/klines | params={'symbol': 'BTCUSDT', 'interval': '15m', 'limit': 160}
+2026-06-14 07:30:01 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:30:01 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/klines | params={'symbol': 'BTCUSDT', 'interval': '15m', 'limit': 300}
+2026-06-14 07:30:01 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:30:01 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:30:01 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/openOrders | params={'symbol': 'BTCUSDT', 'timestamp': 1781402401537, 'signature': '9a5b8acb95ef514aafd92e38b34abb0c90d12015667760a2533dc329228f8030'}
+2026-06-14 07:30:01 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'BTCUSDT'}
+2026-06-14 07:30:02 | DEBUG    | client | Response 200: [[1781258400000,"63730.00","63807.60","63708.00","63741.20","15238.0636",1781259299999,"971498872.151290",7560,"6722.1041","428610602.755100","0"],[1781259300000,"63741.10","63807.50","63568.20","63572.60","20448.5982",1781260199999,"1302402160.272110",8631,"359.1771","22895457.178250","0"],[1781260200000,"63572.90","63678.40","63568.20","63641.30","17154.2564",1781261099999,"1091596867.704040",9131,"14134.6726","899403948.456110","0"],[1781261100000,"63641.20","63700.10","63640.10","63681.80","
+2026-06-14 07:30:02 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v2/account | params={'timestamp': 1781402402247, 'signature': '733352189be39e20b5b1f7901049671c42c67e04679e8cee037e547e5491fe08'}
+2026-06-14 07:30:02 | DEBUG    | client | Response 200: []
+2026-06-14 07:30:02 | DEBUG    | client | Response 200: {"price":"64549.90","symbol":"BTCUSDT","time":1781402397040}
+2026-06-14 07:30:02 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:30:02 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'ETHUSDT'}
+2026-06-14 07:30:02 | DEBUG    | client | Response 200: [[1781132400000,"61405.20","61405.60","61192.00","61192.00","24860.0138",1781133299999,"1523979420.304430",8124,"7183.5442","440490766.872860","0"],[1781133300000,"61192.00","61485.00","61192.00","61483.00","22259.8555",1781134199999,"1365516971.341960",6530,"21314.9060","1307511456.741670","0"],[1781134200000,"61482.90","61634.80","61447.20","61564.50","23100.1365",1781135099999,"1420792963.465660",6643,"12301.3473","756741086.617810","0"],[1781135100000,"61564.50","61565.20","61473.60","61526.
+2026-06-14 07:30:02 | DEBUG    | client | Response 200: {"feeTier":0,"canTrade":true,"canDeposit":true,"canWithdraw":true,"feeBurn":true,"tradeGroupId":-1,"updateTime":0,"multiAssetsMargin":false,"totalInitialMargin":"32.26740000","totalMaintMargin":"2.58139200","totalWalletBalance":"4999.06095022","totalUnrealizedProfit":"4.06625000","totalMarginBalance":"5003.12720022","totalPositionInitialMargin":"32.26740000","totalOpenOrderInitialMargin":"0.00000000","totalCrossWalletBalance":"4999.06095022","totalCrossUnPnl":"4.06625000","availableBalance":"497
+2026-06-14 07:30:02 | DEBUG    | client | Response 200: {"price":"1682.93","symbol":"ETHUSDT","time":1781402399502}
+2026-06-14 07:30:02 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:30:02 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'SOLUSDT'}
+2026-06-14 07:30:03 | DEBUG    | client | Response 200: {"price":"68.7900","symbol":"SOLUSDT","time":1781402402853}
+2026-06-14 07:30:41 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:30:41 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/klines | params={'symbol': 'BTCUSDT', 'interval': '15m', 'limit': 160}
+2026-06-14 07:30:41 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:30:41 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/klines | params={'symbol': 'BTCUSDT', 'interval': '15m', 'limit': 300}
+2026-06-14 07:30:41 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:30:41 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:30:41 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/openOrders | params={'symbol': 'BTCUSDT', 'timestamp': 1781402441535, 'signature': '1ad1eb49ba69a02e2ef2f8b5516f742401e0dbd50a3bb13167a7fc88023e71c6'}
+2026-06-14 07:30:41 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'BTCUSDT'}
+2026-06-14 07:30:42 | DEBUG    | client | Response 200: [[1781259300000,"63741.10","63807.50","63568.20","63572.60","20448.5982",1781260199999,"1302402160.272110",8631,"359.1771","22895457.178250","0"],[1781260200000,"63572.90","63678.40","63568.20","63641.30","17154.2564",1781261099999,"1091596867.704040",9131,"14134.6726","899403948.456110","0"],[1781261100000,"63641.20","63700.10","63640.10","63681.80","5231.3832",1781261999999,"333095164.555610",6667,"3840.8951","244580508.952710","0"],[1781262000000,"63700.10","63814.90","63671.80","63795.60","2
+2026-06-14 07:30:42 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v2/account | params={'timestamp': 1781402442083, 'signature': '77b5300f5bc07fe35af45843f6c81204ea9269342b34f5ad6b208eaa9e07944b'}
+2026-06-14 07:30:42 | DEBUG    | client | Response 200: {"price":"64548.40","symbol":"BTCUSDT","time":1781402435547}
+2026-06-14 07:30:42 | DEBUG    | client | Response 200: []
+2026-06-14 07:30:42 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:30:42 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'ETHUSDT'}
+2026-06-14 07:30:42 | DEBUG    | client | Response 200: [[1781133300000,"61192.00","61485.00","61192.00","61483.00","22259.8555",1781134199999,"1365516971.341960",6530,"21314.9060","1307511456.741670","0"],[1781134200000,"61482.90","61634.80","61447.20","61564.50","23100.1365",1781135099999,"1420792963.465660",6643,"12301.3473","756741086.617810","0"],[1781135100000,"61564.50","61565.20","61473.60","61526.00","19582.4593",1781135999999,"1204528813.544690",6289,"9216.4291","567002324.024730","0"],[1781136000000,"61533.40","61639.40","61502.70","61639.
+2026-06-14 07:30:42 | DEBUG    | client | Response 200: {"feeTier":0,"canTrade":true,"canDeposit":true,"canWithdraw":true,"feeBurn":true,"tradeGroupId":-1,"updateTime":0,"multiAssetsMargin":false,"totalInitialMargin":"32.26727594","totalMaintMargin":"2.58138207","totalWalletBalance":"4999.06095022","totalUnrealizedProfit":"4.06376874","totalMarginBalance":"5003.12471896","totalPositionInitialMargin":"32.26727594","totalOpenOrderInitialMargin":"0.00000000","totalCrossWalletBalance":"4999.06095022","totalCrossUnPnl":"4.06376874","availableBalance":"497
+2026-06-14 07:30:42 | DEBUG    | client | Response 200: {"price":"1682.80","symbol":"ETHUSDT","time":1781402440156}
+2026-06-14 07:30:42 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:30:42 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'SOLUSDT'}
+2026-06-14 07:30:43 | DEBUG    | client | Response 200: {"price":"68.7500","symbol":"SOLUSDT","time":1781402440962}
+2026-06-14 07:31:21 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:31:21 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/klines | params={'symbol': 'BTCUSDT', 'interval': '15m', 'limit': 160}
+2026-06-14 07:31:21 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:31:21 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/klines | params={'symbol': 'BTCUSDT', 'interval': '15m', 'limit': 300}
+2026-06-14 07:31:21 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:31:21 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:31:21 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/openOrders | params={'symbol': 'BTCUSDT', 'timestamp': 1781402481529, 'signature': 'cdbca5f3062264eb37d7c5c10d70b158756d639a51258288130b4a3c349d729e'}
+2026-06-14 07:31:21 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'BTCUSDT'}
+2026-06-14 07:31:22 | DEBUG    | client | Response 200: [[1781259300000,"63741.10","63807.50","63568.20","63572.60","20448.5982",1781260199999,"1302402160.272110",8631,"359.1771","22895457.178250","0"],[1781260200000,"63572.90","63678.40","63568.20","63641.30","17154.2564",1781261099999,"1091596867.704040",9131,"14134.6726","899403948.456110","0"],[1781261100000,"63641.20","63700.10","63640.10","63681.80","5231.3832",1781261999999,"333095164.555610",6667,"3840.8951","244580508.952710","0"],[1781262000000,"63700.10","63814.90","63671.80","63795.60","2
+2026-06-14 07:31:22 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v2/account | params={'timestamp': 1781402482204, 'signature': '85a754e7fceebb07232b89607fc904519c565262414755d1ae79958dc48db72e'}
+2026-06-14 07:31:22 | DEBUG    | client | Response 200: {"price":"64548.50","symbol":"BTCUSDT","time":1781402475990}
+2026-06-14 07:31:22 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:31:22 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'ETHUSDT'}
+2026-06-14 07:31:22 | DEBUG    | client | Response 200: []
+2026-06-14 07:31:22 | DEBUG    | client | Response 200: {"feeTier":0,"canTrade":true,"canDeposit":true,"canWithdraw":true,"feeBurn":true,"tradeGroupId":-1,"updateTime":0,"multiAssetsMargin":false,"totalInitialMargin":"32.26565000","totalMaintMargin":"2.58125200","totalWalletBalance":"4999.06095022","totalUnrealizedProfit":"4.03125000","totalMarginBalance":"5003.09220022","totalPositionInitialMargin":"32.26565000","totalOpenOrderInitialMargin":"0.00000000","totalCrossWalletBalance":"4999.06095022","totalCrossUnPnl":"4.03125000","availableBalance":"497
+2026-06-14 07:31:22 | DEBUG    | client | Response 200: [[1781133300000,"61192.00","61485.00","61192.00","61483.00","22259.8555",1781134199999,"1365516971.341960",6530,"21314.9060","1307511456.741670","0"],[1781134200000,"61482.90","61634.80","61447.20","61564.50","23100.1365",1781135099999,"1420792963.465660",6643,"12301.3473","756741086.617810","0"],[1781135100000,"61564.50","61565.20","61473.60","61526.00","19582.4593",1781135999999,"1204528813.544690",6289,"9216.4291","567002324.024730","0"],[1781136000000,"61533.40","61639.40","61502.70","61639.
+2026-06-14 07:31:22 | DEBUG    | client | Response 200: {"price":"1682.66","symbol":"ETHUSDT","time":1781402476025}
+2026-06-14 07:31:22 | INFO     | client | BinanceClient initialised — endpoint: https://demo-fapi.binance.com
+2026-06-14 07:31:22 | DEBUG    | client | GET https://demo-fapi.binance.com/fapi/v1/ticker/price | params={'symbol': 'SOLUSDT'}
+2026-06-14 07:31:23 | DEBUG    | client | Response 200: {"price":"68.7100","symbol":"SOLUSDT","time":1781402482459}
