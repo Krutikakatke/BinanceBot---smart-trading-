@@ -3,6 +3,7 @@ from __future__ import annotations
 from dataclasses import dataclass
 from statistics import mean, pstdev
 from typing import Any, Dict, List, Optional
+import numpy
 
 
 @dataclass
